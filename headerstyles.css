@@ -1,0 +1,124 @@
+/* custom-styles.css */
+/* This file contains all shared styles for the header and footer across your website. */
+
+/* --- FONT IMPORTS --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+
+/* --- HEADER STYLES --- */
+#header-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.new-header-embed *, .qalam-footer * { box-sizing: border-box; }
+.new-header-embed { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; padding: 15px 0; }
+.new-header-embed .main-header { max-width: 1200px; margin: 0 auto; padding: 0 25px; display: flex; justify-content: space-between; align-items: center; }
+.new-header-embed .logo-container a { display: block; }
+.new-header-embed .logo-container img { max-height: 45px; display: block; margin-top: 5px; }
+.new-header-embed .mobile-menu-header, .new-header-embed .close-menu, .new-header-embed .menu-overlay, .new-header-embed .mobile-arrow { display: none; }
+.new-header-embed .main-navigation ul { margin: 0; padding: 0; list-style: none; display: flex; align-items: center; gap: 35px; position: relative; }
+.new-header-embed .main-navigation > ul > li > a { color: #ffffff !important; text-decoration: none; font-size: 0.7em; font-weight: 500; text-transform: uppercase; letter-spacing: 0.8px; padding: 10px 0; transition: color 0.3s ease; position: relative; display: flex; align-items: center; }
+.new-header-embed .main-navigation > ul > li > a:hover { color: #dcdcdc !important; }
+.new-header-embed .desktop-arrow { margin-left: 6px; font-size: 1.2em; display: inline-block; transition: transform 0.3s ease; }
+.new-header-embed .dropdown:hover .desktop-arrow { transform: rotate(180deg); }
+.new-header-embed .main-navigation > ul > li > a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: #ffffff; transition: width 0.3s ease-in-out; }
+.new-header-embed .main-navigation > ul > li.active > a::after, .new-header-embed .main-navigation > ul > li:hover > a::after { width: 100%; }
+.new-header-embed .dropdown .dropdown-menu { opacity: 0; visibility: hidden; transform: translateY(10px); transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s; position: absolute; top: 100%; left: 0; margin-top: 25px; padding: 0; background-color: #000000; box-shadow: 0 8px 16px rgba(0,0,0,0.1); border-top: 3px solid #0056b3; border-radius: 0 0 4px 4px; overflow: hidden; min-width: 260px; }
+.new-header-embed .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.new-header-embed .dropdown-content-white { background-color: #ffffff; padding: 25px; }
+.new-header-embed .dropdown-title { font-size: 1.2em; font-weight: 600; color: #1a1a1a; margin: 0 0 10px 0; text-align: left; }
+.new-header-embed .dropdown-title-divider { height: 1px; background-color: #e0e0e0; margin: 0 0 15px 0; }
+.new-header-embed .dropdown-grid { list-style: none; padding: 0; margin: 0; text-align: left; }
+.new-header-embed .dropdown-grid a { color: #444444 !important; font-size: 0.75em; font-weight: 500; text-transform: none; letter-spacing: normal; padding: 8px 0; display: block; white-space: nowrap; text-decoration: none; position: relative; transition: color 0.3s ease; }
+.new-header-embed .dropdown-grid a:hover { color: #000000 !important; }
+.new-header-embed .dropdown-grid a::after { content: ''; position: absolute; bottom: 5px; left: 0; width: 0; height: 1px; background-color: #000000; transition: width 0.2s ease-out; }
+.new-header-embed .dropdown-grid a:hover::after { width: 100%; }
+.new-header-embed .hamburger-menu { display: none; background: none; border: none; cursor: pointer; padding: 10px; z-index: 1005; transition: opacity 0.3s ease, visibility 0.3s ease; }
+.new-header-embed .hamburger-bar { display: block; width: 25px; height: 3px; background-color: #ffffff; margin: 5px 0; }
+.new-header-embed .submenu-header-mobile { display: none; } /* Hide back button on desktop */
+
+/* --- FOOTER STYLES --- */
+/* (Footer styles remain unchanged) */
+.qalam-footer { background-color: #000000; color: #ffffff; font-family: 'Poppins', sans-serif; padding: 60px 0; width: 100%; box-sizing: border-box; }
+.footer-content-wrapper { max-width: 1100px; margin: 0 auto; padding: 0 15px; }
+.footer-main { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 40px; padding-bottom: 40px; }
+.footer-logo-and-nav { display: flex; flex-direction: column; align-items: flex-start; gap: 40px; }
+.footer-logo-link .footer-logo { width: 200px; height: auto; display: block; }
+.footer-nav { display: flex; gap: 50px; }
+.footer-nav-col { list-style: none; margin: 0; padding: 0; }
+.footer-nav-col li { margin-bottom: 15px; }
+.footer-nav-col a { color: #ffffff; text-decoration: none; font-size: 16px; font-weight: 500; transition: opacity 0.3s; }
+.footer-nav-col a:hover { opacity: 0.7; }
+.footer-cta { text-align: left; }
+.footer-cta p { margin: 0 0 5px 0; font-size: 16px; font-weight: 400; color: #e0e0e0; }
+.footer-cta h2 { margin: 0; font-size: 38px; font-weight: 500; line-height: 1.2; transition: font-size 0.3s ease; }
+.footer-separator { border: 0; height: 1px; background-image: linear-gradient(to right, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4) 5px, transparent 5px, transparent 10px); background-size: 10px 1px; background-repeat: repeat-x; margin: 0; }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; padding-top: 30px; font-size: 14px; color: #d1d1d1; }
+.footer-legal a { color: #d1d1d1; text-decoration: none; margin-right: 25px; transition: opacity 0.3s; }
+.footer-legal a:last-child { margin-right: 0; }
+.footer-legal a:hover { opacity: 0.7; }
+.footer-social { display: flex; align-items: center; gap: 20px; }
+.footer-social a { color: #ffffff; text-decoration: none; transition: opacity 0.3s; }
+.footer-social a:hover { opacity: 0.7; }
+.footer-social .icon-mail svg { width: 22px; height: auto; vertical-align: middle; }
+.footer-social .icon-linkedin { font-weight: 600; font-size: 18px; }
+
+/* --- RESPONSIVE STYLES --- */
+@media (max-width: 992px) {
+    .footer-main, .footer-bottom { flex-direction: column; align-items: flex-start; }
+    .footer-bottom { gap: 25px; }
+}
+
+@media (max-width: 768px) {
+    .new-header-embed .hamburger-menu { display: block; }
+    .new-header-embed .desktop-arrow, .new-header-embed .dropdown-content-white .dropdown-title, .new-header-embed .dropdown-content-white .dropdown-title-divider { display: none; }
+    .new-header-embed .mobile-arrow { display: block; }
+    .new-header-embed.menu-open .hamburger-menu { opacity: 0; visibility: hidden; }
+    .new-header-embed .menu-overlay { display: block; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1001; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
+    .new-header-embed.menu-open .menu-overlay { opacity: 1; visibility: visible; }
+    
+    .new-header-embed .main-navigation { display: block; position: fixed; top: 0; left: 0; width: 85%; max-width: 320px; height: 100vh; background-color: #000000; z-index: 1002; transform: translateX(-100%); transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94); padding: 0; /* Remove padding for full height panels */ overflow-x: hidden; /* Hide sliding panels */ }
+    .new-header-embed.menu-open .main-navigation { transform: translateX(0); }
+    
+    .new-header-embed .mobile-menu-header { padding: 20px; margin-bottom: 0; display: flex; justify-content: space-between; align-items: center; }
+    .new-header-embed .mobile-menu-header .logo-container img { max-height: 35px; margin-top: 0; }
+    .new-header-embed .close-menu { display: block; background: none; border: none; cursor: pointer; font-size: 28px; color: #ffffff; line-height: 1; padding: 5px; }
+
+    /* ===== NEW: Main Menu Panel Styling ===== */
+    .new-header-embed .main-navigation > ul { display: flex; flex-direction: column; gap: 0; position: absolute; top: 80px; /* Position below mobile header */ left: 0; width: 100%; height: calc(100% - 80px); transition: transform 0.35s ease; padding: 0; /* Reset padding */ }
+    .new-header-embed.menu-open .main-navigation > ul { display: flex; } /* Ensure it shows when menu opens */
+
+    .new-header-embed .main-navigation li { border-bottom: 1px solid rgba(255, 255, 255, 0.15); width: 100%; }
+    .new-header-embed .main-navigation li:last-child { border-bottom: none; }
+
+    /* ===== FIX: Mobile Menu Left Alignment ===== */
+    .new-header-embed .main-navigation > ul > li > a { display: flex; align-items: center; width: 100%; justify-content: flex-start; /* Align items to the start */ gap: 15px; /* Add space between icon/text and arrow */ color: #ffffff !important; font-size: 1.1em; font-weight: 500; text-transform: none; letter-spacing: 0; padding: 18px 25px; }
+    .new-header-embed .main-navigation > ul > li > a .mobile-arrow { margin-left: auto; /* Push arrow to the far right */ }
+    
+    /* ===== NEW: Horizontal Submenu Slide ===== */
+    /* 1. Style the submenu panel */
+    .new-header-embed .dropdown .dropdown-menu { display: block !important; visibility: visible; opacity: 1; position: absolute; top: 0; left: 0; width: 100%; height: 100%; transform: translateX(100%); /* Start off-screen to the right */ transition: transform 0.35s ease; background-color: #111111; /* Slightly different BG */ padding: 0; margin: 0; border: none; border-radius: 0; min-width: unset; }
+    .new-header-embed .dropdown .dropdown-content-white { padding: 0; background: none; }
+    .new-header-embed .dropdown-grid { margin: 0; }
+    .new-header-embed .dropdown-grid li { border-bottom: 1px solid rgba(255, 255, 255, 0.15); }
+    .new-header-embed .dropdown-grid a { padding: 18px 25px; }
+    
+    /* 2. Style the new back button header */
+    .new-header-embed .submenu-header-mobile { display: flex; align-items: center; padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.2); gap: 15px; }
+    .new-header-embed .menu-back-btn { background: none; border: none; color: #fff; font-size: 1.1em; cursor: pointer; padding: 0; }
+    .new-header-embed .submenu-header-mobile h4 { margin: 0; color: #fff; font-size: 1.1em; font-weight: 500; }
+
+    /* 3. The slide animation classes */
+    .new-header-embed .main-navigation.submenu-is-active > ul { transform: translateX(-100%); /* Slide main menu left */ }
+    .new-header-embed .main-navigation.submenu-is-active .dropdown-menu { transform: translateX(0); /* Slide submenu in */ }
+
+    .footer-nav { flex-direction: column; gap: 0; }
+    .footer-nav-col:first-child { margin-bottom: 15px; }
+    .footer-cta h2 { font-size: 32px; }
+    .footer-legal { display: flex; flex-direction: column; gap: 12px; }
+    .footer-legal a { margin-right: 0; }
+}

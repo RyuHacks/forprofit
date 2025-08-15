@@ -1,0 +1,26 @@
+ .u-section-1 {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to right, #000000, rgba(0, 0, 0, 0.9));
+  background-size: cover;
+}
+
+.u-section-1 .u-sheet-1 {
+  min-height: 315px;
+}
+
+.u-section-1 .u-custom-html-1 {
+  margin-bottom: 0;
+  margin-top: 147px;
+  height: auto;
+  min-height: 168px;
+}.u-section-2 .u-sheet-1 {
+  min-height: 395px;
+}
+
+.u-section-2 .u-custom-html-1 {
+  margin-bottom: 60px;
+  margin-top: 94px;
+}.u-section-3 .u-sheet-1 {
+  min-height: 400px;
+}

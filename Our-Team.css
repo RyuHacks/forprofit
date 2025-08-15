@@ -67,7 +67,7 @@
   grid-auto-columns: calc(33.3333% - 6.66667px);
   grid-template-columns: repeat(3, calc(33.3333% - 6.66667px));
   min-height: 385px;
-  grid-gap: 10px;
+  --gap: 10px;
 }
 
 .u-section-2 .u-container-layout-1 {
@@ -144,6 +144,7 @@
 
   .u-section-2 .u-repeater-1 {
     min-height: 443px;
+    grid-gap: 10px;
   }
 }
 
@@ -194,7 +195,7 @@
   grid-auto-columns: calc(33.3333% - 6.66667px);
   grid-template-columns: repeat(3, calc(33.3333% - 6.66667px));
   min-height: 443px;
-  grid-gap: 10px;
+  --gap: 10px;
 }
 
 .u-section-3 .u-container-layout-1 {
@@ -268,7 +269,8 @@
   .u-section-3 .u-repeater-1 {
     grid-auto-columns: calc(33.333333333333336% - 6.66667px);
     grid-template-columns: repeat(3, calc(33.333333333333336% - 6.66667px));
-    min-height: 382px;
+    min-height: 383px;
+    grid-gap: 10px;
   }
 }
 
@@ -280,7 +282,7 @@
   .u-section-3 .u-repeater-1 {
     grid-auto-columns: calc(50% - 5.0000025px);
     grid-template-columns: repeat(2, calc(50% - 5.0000025px));
-    min-height: 894px;
+    min-height: 880px;
   }
 }
 

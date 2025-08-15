@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>Strategy</title>
+
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+    <link rel="stylesheet" href="Strategy.css" media="screen">
+
+    <link rel="stylesheet" href="headerstyles.css" media="screen">
+
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+
+    <meta name="generator" content="Nicepage 7.11.4, nicepage.com">
+    <link rel="icon" href="images/favicon1.png">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "QalamProfit2"
+    }</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Strategy">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta data-intl-tel-input-cdn-path="intlTelInput/">
+
+    <style>
+      .about-hero-embed {
+        /* Add padding to push content below the absolute-positioned header */
+        padding-top: 150px !important;
+      }
+      
+      .about-hero-embed *, .service-directory-embed *, .highlights-embed *, .how-we-help-container *, .our-approach-embed *, .client-results-detailed-embed *, .cta-hook-embed * {
+        box-sizing: border-box;
+      }
+
+      /* Hero Styles */
+      .about-hero-embed { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: #ffffff; padding: 0 40px 80px 20px; min-height: 500px; display: flex; align-items: center; }
+      .about-hero-embed .hero-content { max-width: 1200px; margin: 0; text-align: left; }
+      .about-hero-embed .hero-headline-container { margin-bottom: 10px; }
+      .about-hero-embed .headline-part { font-size: 0.77em; font-weight: 700; line-height: 1.3; color: #ffffff; display: block; opacity: 0; animation-fill-mode: forwards; }
+      .about-hero-embed .hero-subtext { font-size: 1.25em; line-height: 1.7; color: #e0e0e0; margin-top: 0; max-width: 750px; opacity: 0; animation-fill-mode: forwards; }
+      @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+      .about-hero-embed .headline-part, .about-hero-embed .hero-subtext { animation-name: fadeInUp; animation-duration: 0.7s; animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+      .about-hero-embed .headline-part-1 { animation-delay: 0.2s; }
+      .about-hero-embed .hero-subtext { animation-delay: 0.8s; }
+
+      /* Service Directory Styles */
+      .service-directory-embed { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; max-width: 1100px; margin: 60px auto; padding: 0 15px; color: #333; }
+      .service-directory-embed .directory-eyebrow { font-size: 0.9em; font-weight: 700; text-transform: uppercase; color: #1a1a1a; letter-spacing: 0.5px; margin-bottom: 10px; text-align: left; }
+      .service-directory-embed .eyebrow-divider { height: 1px; background-color: #000000; width: 40vw; max-width: 100%; margin: 0 0 30px 0; }
+      .service-directory-embed .directory-list { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 20px 40px; list-style: none; margin: 0; padding: 0; }
+      .service-directory-embed .directory-list li a { color: #0056b3; text-decoration: none; font-size: 1.05em; font-weight: 500; display: inline-block; transition: transform 0.2s ease-out, text-decoration 0.2s ease-out; }
+      .service-directory-embed .directory-list li a:hover { text-decoration: underline; transform: translateX(4px); }
+      .service-directory-embed .directory-list li a::before { content: '›'; margin-right: 10px; font-weight: 700; }
+
+      /* Highlights Styles */
+      .highlights-embed { font-family: "Graphik", Helvetica, sans-serif, "Lucida Sans Unicode"; margin: 40px 0; padding: 40px 40px; color: #333; }
+      .highlights-embed .section-eyebrow { font-size: 0.9em; font-weight: 700; color: #444; margin-bottom: 10px; text-align: left; text-transform: uppercase; letter-spacing: 0.5px; }
+      .highlights-embed .eyebrow-divider { height: 1px; width: 40vw; background-color: #000000; margin: 0 0 30px 0; }
+      .highlights-embed .top-stats-row { display: flex; justify-content: flex-start; gap: 60px; flex-wrap: wrap; }
+      .highlights-embed .stat-column { flex: 1; min-width: 280px; max-width: 400px; }
+      .highlights-embed .stat-headline { font-size: 1.25em; font-weight: 600; color: #222; margin-top: 0; margin-bottom: 10px; }
+      .highlights-embed .stat-divider { border: none; height: 2px; background-color: #000000; width: 35px; margin: 0 0 10px 0; }
+      .highlights-embed .stat-subheadline { font-size: 0.95em; color: #555; line-height: 1.5; margin-top: 0; margin-bottom: 15px; }
+
+      /* How We Help Styles */
+      .how-we-help-container { max-width: 1100px; margin: 40px auto; padding: 0 15px; }
+      .how-we-help-container .how-we-help-main-title { font-family: "Graphik", Helvetica, sans-serif, "Lucida Sans Unicode"; font-weight: 700; font-size: 0.9em; color: #444444; text-align: left; margin-bottom: 10px; letter-spacing: 0.5px; text-transform: uppercase; }
+      .how-we-help-container .eyebrow-divider { height: 1px; width: 40vw; background-color: #000000; margin: 0 0 30px 0; }
+      .how-we-help-container .strategy-columns-box { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; display: flex; gap: 40px; }
+      .how-we-help-container .service-column { flex: 1; padding: 0; text-align: left; }
+      .how-we-help-container .service-column h3 { font-size: 1.38em; font-weight: 600; color: #2c2c2c; margin-top: 0; margin-bottom: 12px; }
+      .how-we-help-container .service-column p { font-size: 1.04em; color: #555555; line-height: 1.6; margin-top: 0; margin-bottom: 0; }
+
+      /* Our Approach Styles */
+      .our-approach-embed { font-family: "Graphik", Helvetica, sans-serif, "Lucida Sans Unicode"; max-width: 1100px; margin: 50px auto; padding: 0 15px; color: #cccccc; }
+      .our-approach-embed .approach-section-eyebrow { font-size: 0.8em; font-weight: 700; text-transform: uppercase; color: #bbbbbb; letter-spacing: 0.5px; margin-bottom: 10px; text-align: left; }
+      .our-approach-embed .eyebrow-divider { height: 1px; background-color: #555555; width: 40vw; max-width: 100%; margin: 0 0 30px 0; }
+      .our-approach-embed .approach-steps-grid { display: flex; gap: 35px; flex-wrap: wrap; }
+      .our-approach-embed .approach-step-item { flex: 1; min-width: 280px; text-align: left; }
+      .our-approach-embed .step-headline { font-size: 1.3em; font-weight: 600; color: #ffffff; margin-top: 0; margin-bottom: 12px; line-height: 1.3; }
+      .our-approach-embed .step-description { font-size: 0.95em; color: #dddddd; line-height: 1.65; margin-top: 0; }
+
+      /* Client Results Styles */
+      .client-results-detailed-embed { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; margin: 60px 0; padding: 0 40px; color: #333; }
+      .client-results-detailed-embed .section-eyebrow { font-family: "Graphik", Helvetica, sans-serif, "Lucida Sans Unicode"; font-size: 1.35em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #000000; margin-bottom: 12px; text-align: left; }
+      .client-results-detailed-embed .eyebrow-divider { height: 1px; width: 100%; background-color: #000000; margin: 0 0 35px 0; }
+      .client-results-detailed-embed .section-intro-text { font-size: 1.1em; line-height: 1.7; color: #444444; margin-bottom: 50px; max-width: 800px; }
+      .client-results-detailed-embed .results-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+      .client-results-detailed-embed .result-title { font-size: 1.4em; font-weight: 600; color: #1a1a1a; margin: 0 0 15px 0; }
+      .client-results-detailed-embed .result-image-placeholder { width: 100%; padding-top: 56.25%; background-color: #f8f9fa; border: 1px solid #e0e0e0; margin-bottom: 25px; }
+      .client-results-detailed-embed .detail-section { margin-bottom: 20px; }
+      .client-results-detailed-embed .detail-section h4 { font-size: 1em; font-weight: 700; color: #333; margin: 0 0 5px 0; }
+      .client-results-detailed-embed .detail-section p { font-size: 1em; line-height: 1.6; color: #555; margin: 0; }
+
+      /* CTA Hook Styles */
+      .cta-hook-embed { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; margin: 60px 0; padding: 60px 40px; color: #333; border-top: 1px solid #000000; text-align: center; }
+      .cta-hook-embed .cta-content-wrapper { max-width: 700px; margin: 0 auto; }
+      .cta-hook-embed .cta-headline { font-family: "Graphik", Helvetica, sans-serif, "Lucida Sans Unicode"; font-size: 2.8em; font-weight: 600; color: #1a1a1a; line-height: 1.25; margin-top: 0; margin-bottom: 20px; }
+      .cta-hook-embed .cta-subtext { font-size: 1.1em; line-height: 1.7; color: #555555; margin-bottom: 30px; }
+      .cta-hook-embed .cta-button { display: inline-flex; text-decoration: none; cursor: pointer; }
+      .cta-hook-embed .button-text { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1em; font-weight: 600; color: #000000; text-transform: uppercase; letter-spacing: 0.8px; position: relative; padding-bottom: 4px; }
+      .cta-hook-embed .button-text::after { content: ''; position: absolute; bottom: 0; left: 0; height: 2px; background-color: #000000; width: 0; transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+      .cta-hook-embed .cta-button:hover .button-text::after { width: 100%; }
+
+      /* General Responsive Styles for Page */
+      @media (max-width: 768px) {
+        .about-hero-embed { padding: 0 20px 60px 10px; }
+        .about-hero-embed .headline-part { font-size: 0.64em; }
+        .about-hero-embed .hero-subtext { font-size: 1.1em; }
+        .service-directory-embed .directory-list { grid-template-columns: 1fr; gap: 15px 0; }
+        .service-directory-embed .directory-eyebrow { margin-bottom: 10px; }
+        .highlights-embed { padding: 30px 20px; }
+        .highlights-embed .section-eyebrow, .highlights-embed .stat-column { text-align: center; }
+        .highlights-embed .eyebrow-divider, .highlights-embed .stat-divider { margin-left: auto; margin-right: auto; }
+        .highlights-embed .top-stats-row { flex-direction: column; gap: 30px; align-items: center; }
+        .highlights-embed .stat-column { min-width: 100%; }
+        .how-we-help-container .how-we-help-main-title, .how-we-help-container .service-column { text-align: center; }
+        .how-we-help-container .eyebrow-divider { margin-left: auto; margin-right: auto; }
+        .how-we-help-container .strategy-columns-box { flex-direction: column; gap: 35px; }
+        .our-approach-embed .approach-section-eyebrow, .our-approach-embed .approach-step-item { text-align: center; }
+        .our-approach-embed .eyebrow-divider { margin-left: auto; margin-right: auto; }
+        .our-approach-embed .approach-steps-grid { flex-direction: column; gap: 30px; }
+        .our-approach-embed .approach-step-item { min-width: 100%; }
+        .client-results-detailed-embed { padding: 0 20px; }
+        .client-results-detailed-embed .section-eyebrow, .client-results-detailed-embed .section-intro-text, .client-results-detailed-embed .result-item { text-align: center; margin-left: auto; margin-right: auto; }
+        .client-results-detailed-embed .eyebrow-divider { margin-left: auto; margin-right: auto; }
+        .client-results-detailed-embed .results-grid { grid-template-columns: 1fr; gap: 50px; }
+        .client-results-detailed-embed .detail-section p { text-align: left; }
+        .cta-hook-embed { padding: 50px 20px; }
+        .cta-hook-embed .cta-headline { font-size: 2.2em; }
+      }
+      @media (max-width: 480px) {
+        .about-hero-embed { padding: 0 15px 50px 8px; min-height: 400px; }
+        .about-hero-embed .headline-part { font-size: 0.55em; }
+        .about-hero-embed .hero-subtext { font-size: 1em; }
+        .service-directory-embed .directory-eyebrow { font-size: 0.85em; }
+        .service-directory-embed .directory-list li a { font-size: 1em; }
+        .how-we-help-container { margin-top: 30px; margin-bottom: 30px; }
+        .how-we-help-container .service-column h3 { font-size: 1.2em; }
+        .how-we-help-container .service-column p { font-size: 1em; }
+        .our-approach-embed .approach-section-eyebrow { font-size: 0.75em; margin-bottom: 10px; }
+        .our-approach-embed .step-headline { font-size: 1.2em; }
+        .our-approach-embed .step-description { font-size: 0.9em; }
+        .cta-hook-embed .cta-headline { font-size: 1.8em; }
+        .cta-hook-embed .cta-subtext { font-size: 1em; }
+      }
+    </style>
+</head>
+
+<body data-path-to-root="./" data-include-products="false" class="u-body u-clearfix u-xl-mode" data-lang="en">
+
+    <div id="header-placeholder"></div>
+
+    <section class="skrollable u-clearfix u-gradient u-image u-parallax u-section-1" id="sec-5a05" data-image-width="3680" data-image-height="2456">
+        <div class="u-clearfix u-sheet u-valign-bottom-lg u-valign-bottom-md u-valign-bottom-sm u-valign-bottom-xs u-valign-middle-xl u-sheet-1">
+            <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-1">
+                <div class="about-hero-embed">
+                    <div class="hero-content">
+                        <h1 class="hero-headline-container"><span class="headline-part headline-part-1">Strategy Services</span></h1>
+                        <p class="hero-subtext">Smart, research-driven solutions for real business<br>challenges.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="u-clearfix u-section-2" id="block-9">
+        <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+            <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-1">
+                <div class="service-directory-embed">
+                    <h4 class="directory-eyebrow">Service Directory</h4>
+                    <div class="eyebrow-divider"></div>
+                    <ul class="directory-list">
+                        <li><a href="#">Strategy Advising</a></li>
+                        <li><a href="#">Market Research</a></li>
+                        <li><a href="#">Financial Advising</a></li>
+                        <li><a href="#">Crisis-Strategy Consulting</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="u-clearfix u-section-3" id="block-5">
+        <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+            <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-1">
+                <div class="highlights-embed">
+                    <h2 class="section-eyebrow">Did you know that...</h2>
+                    <div class="eyebrow-divider"></div>
+                    <div class="top-stats-row">
+                        <div class="stat-column">
+                            <h4 class="stat-headline">Over 70% of Initiatives Underperform</h4>
+                            <hr class="stat-divider">
+                            <p class="stat-subheadline">Many strategic projects fail to deliver their expected ROI due to shifting priorities or lack of alignment.</p>
+                        </div>
+                        <div class="stat-column">
+                            <h4 class="stat-headline">Execution Gap Costs Millions</h4>
+                            <hr class="stat-divider">
+                            <p class="stat-subheadline">Nearly 60% of organizations struggle to bridge the gap between strategy and successful execution, leading to significant waste.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="u-clearfix u-section-4" id="block-4">
+        <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+            <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-1">
+                <div class="how-we-help-container">
+                    <h2 class="how-we-help-main-title">How We Can Help</h2>
+                    <div class="eyebrow-divider"></div>
+                    <div class="strategy-columns-box">
+                        <div class="service-column">
+                            <h3>Market Entry Strategy</h3>
+                            <p>Expand your business into new markets with comprehensive, tailored market entry strategies designed to maximize success.</p>
+                        </div>
+                        <div class="service-column">
+                            <h3>Growth Strategy</h3>
+                            <p>Identify opportunities for organic growth through product development, market penetration, and expansion strategies that drive sustainable growth.</p>
+                        </div>
+                        <div class="service-column">
+                            <h3>Competitive Strategy</h3>
+                            <p>Gain a competitive edge with in-depth competitor analysis, uncovering critical insights into performance, financial health, strengths, and weaknesses. We’ll use this information to craft strategies that elevate your market position.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="u-black u-clearfix u-section-5" id="block-8">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-1">
+                <div class="our-approach-embed">
+                    <h4 class="approach-section-eyebrow">Our Step-by-Step Approach</h4>
+                    <div class="eyebrow-divider"></div>
+                    <div class="approach-steps-grid">
+                        <div class="approach-step-item">
+                            <h3 class="step-headline">1. Discovery &amp; Diagnostic</h3>
+                            <p class="step-description">We begin with a thorough analysis of your current situation, market landscape, and key challenges. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                        <div class="approach-step-item">
+                            <h3 class="step-headline">2. Strategic Formulation</h3>
+                            <p class="step-description">Leveraging deep industry insights and collaborative workshops, we co-create a tailored strategy. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                        <div class="approach-step-item">
+                            <h3 class="step-headline">3. Implementation &amp; Refinement</h3>
+                            <p class="step-description">We support you in executing the strategy, establishing clear metrics, and iterating for continuous improvement. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="u-clearfix u-section-6" id="block-6">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-1">
+                <div class="client-results-detailed-embed">
+                    <h2 class="section-eyebrow">Client Results</h2>
+                    <div class="eyebrow-divider"></div>
+                    <p class="section-intro-text">Real challenges. Practical solutions. Measurable outcomes. Here’s a glimpse into how we’ve helped businesses move forward with clarity and impact.</p>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <h3 class="result-title">Business 1</h3>
+                            <div class="result-image-placeholder"></div>
+                            <div class="detail-section">
+                                <h4>Challenge:</h4>
+                                <p>This organization needed strategic direction to scale operations but lacked internal resources for planning.</p>
+                            </div>
+                            <div class="detail-section">
+                                <h4>Solution:</h4>
+                                <p>Qalam provided a tailored growth strategy supported by competitor analysis and financial forecasting.</p>
+                            </div>
+                            <div class="detail-section">
+                                <h4>Outcome:</h4>
+                                <p>Clear roadmap for expansion, improved internal alignment, and increased operational efficiency within 60 days.</p>
+                            </div>
+                        </div>
+                        <div class="result-item">
+                            <h3 class="result-title">Business 2</h3>
+                            <div class="result-image-placeholder"></div>
+                            <div class="detail-section">
+                                <h4>Challenge:</h4>
+                                <p>A new business struggled with identifying its ideal audience and communicating its value.</p>
+                            </div>
+                            <div class="detail-section">
+                                <h4>Solution:</h4>
+                                <p>We developed a focused marketing strategy, performed audience research, and refined brand messaging.</p>
+                            </div>
+                            <div class="detail-section">
+                                <h4>Outcome:</h4>
+                                <p>A 40% increase in qualified leads and stronger brand recognition across their target market.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="u-clearfix u-section-7" id="block-7">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-1">
+                <div class="cta-hook-embed">
+                    <div class="cta-content-wrapper">
+                        <h2 class="cta-headline">Your next move starts here.</h2>
+                        <p class="cta-subtext">We’re ready to listen, plan, and help you make progress.</p>
+                        <a href="#" class="cta-button"><span class="button-text">Let’s Connect →</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="footer-placeholder"></div>
+
+    <script src="include.js"></script>
+
+</body>
+</html>
