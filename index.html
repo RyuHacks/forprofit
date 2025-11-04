@@ -7,19 +7,19 @@
     <meta name="description" content="">
     <title>Home</title>
     
-    <!-- Nicepage & Theme Styles -->
     <link rel="stylesheet" href="nicepage.css" media="screen">
     <link rel="stylesheet" href="index.css" media="screen">
     
     <link rel="stylesheet" href="headerstyles.css" media="screen">
+    <link rel="stylesheet" href="header.css" media="screen">
 
-    <!-- Nicepage Scripts -->
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     
-    <!-- Meta, Fonts, etc. -->
     <meta name="generator" content="Nicepage 7.11.4, nicepage.com">
-    <link rel="icon" href="images/favicon1.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png" media="(prefers-color-scheme: light)">
+
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96dark.png" media="(prefers-color-scheme: dark)">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     <script type="application/ld+json">{"@context": "http://schema.org", "@type": "Organization", "name": "QalamProfit2"}</script>
     <meta name="theme-color" content="#478ac9">
@@ -28,28 +28,14 @@
     <meta property="og:type" content="website">
     <meta data-intl-tel-input-cdn-path="intlTelInput/">
     
-    <!-- CSS for All Custom Embeds -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
-        
-        /* --- NEW RULE for OVERLAY HEADER --- */
-        #header-placeholder {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-
-        /* --- MODIFIED RULE for HERO PADDING --- */
-        .animated-hero-embed { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: #ffffff; padding: 80px 40px; min-height: 500px; display: flex; padding-top: 150px; }
+        .animated-hero-embed { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: #ffffff; padding: 60px 40px; min-height: 500px; display: flex; padding-top: 50px; }
         .animated-hero-embed .hero-content { max-width: 1200px; margin: 0; text-align: left; }
         .animated-hero-embed .hero-eyebrow { font-size: 0.9em; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #e0e0e0; margin-bottom: 15px; }
         .animated-hero-embed .headline-part { font-size: 2.5em; font-weight: 700; line-height: 1.3; text-transform: uppercase; color: #ffffff; display: block; opacity: 0; animation-fill-mode: forwards; }
         .animated-hero-embed .hero-cta { font-size: 1em; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: #ffffff; text-decoration: none; margin-top: 30px; display: inline-flex; align-items: center; opacity: 0; animation-fill-mode: forwards; transition: color 0.3s ease; }
         .animated-hero-embed .hero-cta:hover { color: #dcdcdc; }
-        .animated-hero-embed .arrow-icon { margin-left: 10px; font-size: 1.5em; line-height: 1; display: inline-block; }
+        .animated-hero-embed .arrow-icon { margin-left: 10px; font-size: 1.5em; line-height: 1; display: inline-block; position: relative; bottom: 2px; }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes nudge { 0% { transform: translateX(0); } 50% { transform: translateX(6px); } 100% { transform: translateX(0); } }
         .animated-hero-embed .headline-part, .animated-hero-embed .hero-cta { animation-name: fadeInUp; animation-duration: 0.6s; animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
@@ -57,131 +43,135 @@
         .animated-hero-embed .headline-part-1, .animated-hero-embed .headline-part-2 { animation-delay: 0.2s; }
         .animated-hero-embed .headline-part-3, .animated-hero-embed .headline-part-4 { animation-delay: 0.6s; }
         .animated-hero-embed .hero-cta, .animated-hero-embed .arrow-icon { animation-delay: 1.0s; }
+
         .who-we-are-embed { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; margin: 60px 0; padding: 0 40px; color: #333; }
         .who-we-are-embed .content-wrapper { display: flex; align-items: center; gap: 50px; }
         .who-we-are-embed .text-column { flex: 1 1 55%; }
         .who-we-are-embed .image-column { flex: 1 1 45%; }
         .who-we-are-embed .image-column img { max-width: 100%; height: auto; display: block; }
-        .who-we-are-embed .section-eyebrow { font-family: 'Open Sans', sans-serif; font-size: 2.11em; line-height: 1.3; font-weight: 700; text-transform: none; letter-spacing: 0.5px; color: #000000; text-align: left; margin: 0 0 25px 0; }
-        .who-we-are-embed .description-text { font-size: 1.1em; line-height: 1.8; color: #444444; text-align: left; hyphens: auto; margin: 0; }
+        .who-we-are-embed .section-eyebrow { font-family: 'Open Sans', sans-serif; font-size: 2.38em; line-height: 1.3; font-weight: 700; text-transform: none; letter-spacing: 0.5px; color: #000000; text-align: left; margin: 0 0 25px 0; }
+        .who-we-are-embed .description-text { font-size: 1.1em; line-height: 1.6; color: #444444; text-align: left; hyphens: auto; margin: 0; }
         .who-we-are-embed .button-container { text-align: left; margin-top: 35px; }
         .who-we-are-embed .button-divider { border: none; height: 1px; background-color: #e0e0e0; width: 100%; margin: 0 0 20px 0; }
         .who-we-are-embed .service-button { display: inline-flex; text-decoration: none; cursor: pointer; }
-        .who-we-are-embed .button-text { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 0.8em; font-weight: 600; color: #000000; text-transform: uppercase; letter-spacing: 0.5px; position: relative; padding-bottom: 4px; }
-        .who-we-are-embed .button-text::after { content: ''; position: absolute; bottom: 0; left: 0; height: 2px; background-color: #000000; width: 0; transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+        .who-we-are-embed .button-text { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 0.8em; font-weight: 600; color: #072d52; text-transform: uppercase; letter-spacing: 0.5px; position: relative; padding-bottom: 4px; }
+        .who-we-are-embed .button-text::after { content: ''; position: absolute; bottom: 0; left: 0; height: 2px; background-color: #072d52; width: 0; transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
         .who-we-are-embed .service-button:hover .button-text::after { width: 100%; }
-        .results-embed { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; margin: 60px 0; padding: 0 40px; color: #333; }
-        .results-embed .content-wrapper { display: flex; align-items: center; gap: 50px; }
-        .results-embed .text-column { flex: 1 1 55%; }
-        .results-embed .image-column { flex: 1 1 45%; order: -1; }
-        .results-embed .image-column img { max-width: 100%; height: auto; display: block; }
-        .results-embed .section-eyebrow { font-family: 'Open Sans', sans-serif; font-size: 2.11em; line-height: 1.3; font-weight: 700; text-transform: none; letter-spacing: 0.5px; color: #000000; text-align: right; margin: 0 0 25px 0; }
-        .results-embed .description-text { font-size: 1.1em; line-height: 1.8; color: #444444; text-align: right; hyphens: auto; margin: 0; }
-        .results-embed .button-container { text-align: right; margin-top: 35px; }
-        .results-embed .button-divider { border: none; height: 1px; background-color: #e0e0e0; width: 100%; margin: 0 0 20px 0; }
-        .results-embed .service-button { display: inline-flex; text-decoration: none; cursor: pointer; }
-        .results-embed .button-text { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 0.8em; font-weight: 600; color: #000000; text-transform: uppercase; letter-spacing: 0.5px; position: relative; padding-bottom: 4px; }
-        .results-embed .button-text::after { content: ''; position: absolute; bottom: 0; left: 0; height: 2px; background-color: #000000; width: 0; transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
-        .results-embed .service-button:hover .button-text::after { width: 100%; }
-        .services-intro-banner-embed { color: #ffffff; padding: 60px 20px; text-align: left; }
-        .services-intro-banner-embed .content-wrapper { max-width: 700px; margin-left: 0; margin-right: auto; }
-        .services-intro-banner-embed .banner-title { font-family: 'Open Sans', sans-serif; font-size: 2.6em; font-weight: 700; line-height: 1.2; margin-top: 0; margin-bottom: 15px; color: #ffffff; }
-        .services-intro-banner-embed .banner-subtext { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1.1em; line-height: 1.7; color: #e0e0e0; margin-top: 0; margin-bottom: 25px; }
-        .services-intro-banner-embed .subtext-divider { height: 2px; width: 60px; background-color: #ffffff; margin: 0; }
-        .services-grid-embed { max-width: 1100px; margin: 60px auto; padding: 0 15px; color: #333; }
-        .services-grid-embed .section-eyebrow { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1.17em; font-weight: 700; text-transform: uppercase; color: #444; letter-spacing: 0.5px; margin-bottom: 10px; text-align: left; }
-        .services-grid-embed .eyebrow-divider { height: 1px; background-color: #000000; width: 40vw; max-width: 100%; margin: 0 0 40px 0; }
-        .services-grid-embed .services-grid { display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; row-gap: 50px; }
-        .services-grid-embed .service-item { text-decoration: none; color: inherit; display: block; position: relative; padding: 10px; }
-        .services-grid-embed .service-title { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1.25em; font-weight: 600; color: #222; margin-top: 0; margin-bottom: 5px; transition: color 0.3s ease; }
-        .services-grid-embed .title-underline { height: 2px; width: 35px; background-color: #000000; margin-bottom: 12px; transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
-        .services-grid-embed .service-description { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 0.95em; color: #555555; line-height: 1.6; padding-right: 25px; }
-        .services-grid-embed .arrow-icon { position: absolute; top: 12px; right: 10px; font-size: 1.2em; color: #000000; opacity: 0; transform: translateX(-10px); transition: opacity 0.3s ease-out, transform 0.3s ease-out; }
-        .services-grid-embed .service-item:hover .service-title { color: #004080; }
-        .services-grid-embed .service-item:hover .title-underline { width: 65px; }
-        .services-grid-embed .service-item:hover .arrow-icon { opacity: 1; transform: translateX(0); }
-        .cta-hook-embed { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; margin: 60px 0; padding: 60px 40px; color: #ffffff; border-bottom: 1px solid #ffffff; text-align: center; }
-        .cta-hook-embed .cta-content-wrapper { max-width: 700px; margin: 0 auto; }
-        .cta-hook-embed .cta-headline { font-family: "Graphik", Helvetica, sans-serif, "Lucida Sans Unicode"; font-size: 2.8em; font-weight: 600; color: #ffffff; line-height: 1.25; margin-top: 0; margin-bottom: 40px; }
-        .cta-hook-embed .cta-button { display: inline-flex; text-decoration: none; cursor: pointer; }
-        .cta-hook-embed .button-text { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1em; font-weight: 600; color: #ffffff; text-transform: uppercase; letter-spacing: 0.8px; position: relative; padding-bottom: 4px; }
-        .cta-hook-embed .button-text::after { content: ''; position: absolute; bottom: 0; left: 0; height: 2px; background-color: #ffffff; width: 0; transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
-        .cta-hook-embed .cta-button:hover .button-text::after { width: 100%; }
         
-
-        @media (max-width: 992px) { .footer-main, .footer-bottom { flex-direction: column; align-items: flex-start; } .footer-bottom { gap: 25px; } }
-        @media (max-width: 768px) {
-            .new-header-embed .hamburger-menu { display: block; } .new-header-embed .desktop-arrow { display: none; } .new-header-embed .mobile-arrow { display: block; } .new-header-embed.menu-open .hamburger-menu { opacity: 0; visibility: hidden; } .new-header-embed .menu-overlay { display: block; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1001; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; } .new-header-embed.menu-open .menu-overlay { opacity: 1; visibility: visible; } .new-header-embed .main-navigation > ul { display: none; } .new-header-embed .main-navigation { display: block; position: fixed; top: 0; left: 0; width: 85%; max-width: 320px; height: 100vh; background-color: #000000; z-index: 1002; transform: translateX(-100%); transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94); overflow-y: auto; padding: 20px; }
-            .new-header-embed.menu-open .main-navigation { transform: translateX(0); } .new-header-embed.menu-open .main-navigation > ul { display: flex; flex-direction: column; } .new-header-embed .mobile-menu-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; } .new-header-embed .mobile-menu-header .logo-container img { max-height: 35px; margin-top: 0; } .new-header-embed .close-menu { display: block; background: none; border: none; cursor: pointer; font-size: 28px; color: #ffffff; line-height: 1; padding: 5px; } .new-header-embed .main-navigation li { border-bottom: 1px solid rgba(255, 255, 255, 0.15); } .new-header-embed .main-navigation li:last-child { border-bottom: none; } .new-header-embed .main-navigation > ul > li > a { color: #ffffff !important; font-size: 1.1em; font-weight: 500; text-transform: none; letter-spacing: 0; padding: 18px 5px; justify-content: space-between; width: 100%; } .new-header-embed .main-navigation > ul > li > a:hover { background-color: rgba(255, 255, 255, 0.1); } .new-header-embed .mobile-arrow { font-size: 1em; color: #ffffff; } .new-header-embed .main-navigation > ul > li > a::after { display: none; } .new-header-embed .dropdown .dropdown-menu { display: none; position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: none; border-radius: 0; margin-top: 0; padding: 0; min-width: unset; width: 100%; background-color: rgba(255, 255, 255, 0.05); } .new-header-embed .dropdown.submenu-open .dropdown-menu { display: block !important; } .new-header-embed .dropdown-content-white, .new-header-embed .dropdown-title, .new-header-embed .dropdown-title-divider { display: none; } .new-header-embed .dropdown-grid a { font-size: 1em; padding: 15px 5px 15px 25px; color: #dcdcdc !important; font-weight: 400; } .new-header-embed .dropdown-grid a:hover { color: #ffffff !important; background-color: rgba(255, 255, 255, 0.1); } .animated-hero-embed { padding: 120px 20px 60px; } .animated-hero-embed .headline-part { font-size: 2em; }
-            .who-we-are-embed, .results-embed { padding: 0 20px; } .who-we-are-embed .content-wrapper, .results-embed .content-wrapper { flex-direction: column; gap: 30px; } .results-embed .image-column { order: 0; } .who-we-are-embed .section-eyebrow, .who-we-are-embed .description-text, .who-we-are-embed .button-container, .results-embed .section-eyebrow, .results-embed .description-text, .results-embed .button-container { text-align: left; } .who-we-are-embed .section-eyebrow, .results-embed .section-eyebrow { font-size: 1.8em; } .who-we-are-embed .description-text, .results-embed .description-text { hyphens: none; font-size: 1.05em; } .services-intro-banner-embed { padding: 50px 20px; } .services-intro-banner-embed .banner-title { font-size: 2.1em; } .services-intro-banner-embed .banner-subtext { font-size: 1.05em; } .services-intro-banner-embed .content-wrapper { max-width: 100%; } .services-grid-embed .section-eyebrow { text-align: center; } .services-grid-embed .eyebrow-divider { margin-left: auto; margin-right: auto; } .services-grid-embed .services-grid { grid-template-columns: 1fr; row-gap: 40px; } .cta-hook-embed { padding: 50px 20px; } .cta-hook-embed .cta-headline { font-size: 2.2em; } .qalam-footer { padding: 40px 0; } .footer-nav { flex-direction: column; gap: 0; } .footer-nav-col:first-child { margin-bottom: 15px; } .footer-cta h2 { font-size: 32px; } .footer-legal { display: flex; flex-direction: column; gap: 12px; } .footer-legal a { margin-right: 0; }
+        /* Client Results Section */
+        .client-results-bain-style { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; padding: 0 40px; color: #333; }
+        .client-results-bain-style .content-wrapper { display: flex; align-items: center; gap: 50px; }
+        .client-results-bain-style .text-column { flex: 1 1 55%; text-align: right; }
+        .client-results-bain-style .image-column { flex: 1 1 45%; }
+        .client-results-bain-style .image-column img { max-width: 100%; height: auto; display: block; }
+        .client-results-bain-style .main-headline { font-family: 'Open Sans', sans-serif; font-size: 2.38em; font-weight: 700; line-height: 1.1; margin: 0 0 15px 0; }
+        .client-results-bain-style .sub-headline { font-size: 1.1em; line-height: 1.6; color: #444; margin: 0 0 40px 0; }
+        .client-results-bain-style .story-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 30px; text-align: left; }
+        .client-results-bain-style .story-column { display: flex; flex-direction: column; }
+        .client-results-bain-style .story-eyebrow { font-size: 0.8em; color: #555; margin: 0 0 8px 0; text-transform: uppercase; }
+        .client-results-bain-style .story-divider { border: none; height: 1px; background-color: #ddd; margin: 0 0 20px 0; }
+        .client-results-bain-style .story-headline { font-family: 'Open Sans', sans-serif; font-size: 1.7em; font-weight: 600; line-height: 1.25; margin: 0; }
+        .client-results-bain-style .story-box { display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; flex-grow: 1; }
+        .client-results-bain-style .story-link { color: #072d52; text-decoration: none; font-weight: 600; font-size: 0.8em; text-transform: uppercase; letter-spacing: 0.5px; position: relative; padding-bottom: 4px; display: inline-block; margin-top: 30px;}
+        .client-results-bain-style .story-link::after { content: ''; position: absolute; bottom: 0; left: 0; height: 2px; background-color: #072d52; width: 0; transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+        .client-results-bain-style .story-link:hover::after { width: 100%; }
+        
+        /* Carousel Styles */
+        .carousel-container { overflow: hidden; position: relative; }
+        .carousel-track { display: flex; transition: transform 0.5s ease-in-out; }
+        .carousel-slide { width: 100%; flex-shrink: 0; }
+        .carousel-pagination { text-align: center; margin-top: 25px; padding-bottom: 40px; }
+        .carousel-dot { cursor: pointer; height: 12px; width: 12px; margin: 0 5px; background-color: #ccc; border-radius: 50%; display: inline-block; transition: background-color 0.3s ease; }
+        .carousel-dot.active { background-color: #072d52; }
+        
+        /* Why Choose Us Banner Styles */
+        .services-intro-banner-embed { color: #ffffff; padding: 60px 20px; text-align: left; }
+        .services-intro-banner-embed .content-wrapper { max-width: 1140px; margin-left: auto; margin-right: auto; }
+        .services-intro-banner-embed .banner-title { font-family: 'Open Sans', sans-serif; font-size: 2.6em; font-weight: 700; line-height: 1.2; margin-top: 0; margin-bottom: 15px; color: #ffffff; }
+        .services-intro-banner-embed .subtext-divider { height: 2px; width: 60px; background-color: #ffffff; margin: 0 0 40px 0; }
+        .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .feature-item h3 { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1.3em; font-weight: 600; margin: 0 0 10px 0; }
+        .feature-item p { font-size: 1em; color: #e0e0e0; line-height: 1.6; margin: 0; }
+        
+        /* Latest Insights Styles */
+        .latest-insights-embed { margin: 60px 0; padding: 0 20px; color: #333; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+        .latest-insights-embed .section-eyebrow { font-size: 1.17em; font-weight: 700; text-transform: uppercase; color: #444; letter-spacing: 0.5px; margin-bottom: 10px; text-align: left; }
+        .latest-insights-embed .eyebrow-divider { height: 1px; background-color: #000000; width: 100%; margin: 0 0 40px 0; }
+        .insights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .insight-card { text-decoration: none; color: inherit; display: flex; flex-direction: column; background-color: #fff; border: 1px solid #e0e0e0; border-radius: 4px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .insight-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
+        .insight-image-container img { width: 100%; height: 220px; object-fit: cover; display: block; }
+        .insight-content { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
+        .insight-category { font-size: 0.8em; font-weight: 600; color: #004080; text-transform: uppercase; margin: 0 0 8px 0; }
+        .insight-title { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1.25em; font-weight: 600; color: #1a1a1a; margin: 0 0 10px 0; line-height: 1.3; }
+        .insight-description { font-size: 0.95em; color: #555; line-height: 1.6; margin: 0 0 20px 0; flex-grow: 1; }
+        .insight-link { font-size: 0.8em; font-weight: 700; text-transform: uppercase; color: #072d52; margin-top: auto; }
+        
+        /* Final CTA (White Background) */
+        .cta-hook-embed-white { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; margin: 60px 0; padding: 60px 40px; color: #333; text-align: center; }
+        .cta-hook-embed-white .cta-content-wrapper { max-width: 700px; margin: 0 auto; }
+        .cta-hook-embed-white .cta-headline { font-family: "Graphik", Helvetica, sans-serif, "Lucida Sans Unicode"; font-size: 2.8em; font-weight: 600; color: #1a1a1a; line-height: 1.25; margin-top: 0; margin-bottom: 40px; }
+        .cta-hook-embed-white .cta-button { display: inline-flex; text-decoration: none; cursor: pointer; }
+        .cta-hook-embed-white .button-text { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1em; font-weight: 600; color: #000000; text-transform: uppercase; letter-spacing: 0.8px; position: relative; padding-bottom: 4px; }
+        .cta-hook-embed-white .button-text::after { content: ''; position: absolute; bottom: 0; left: 0; height: 2px; background-color: #000000; width: 0; transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+        .cta-hook-embed-white .cta-button:hover .button-text::after { width: 100%; }
+        
+        /* --- CUSTOM STYLE OVERRIDES --- */
+        .who-we-are-embed .section-eyebrow,
+        .client-results-bain-style .main-headline,
+        .services-intro-banner-embed .banner-title {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+            font-weight: 700 !important; /* Bold */
         }
-        @media (max-width: 480px) { .animated-hero-embed { padding-top: 100px; padding-bottom: 50px; min-height: 400px; } .animated-hero-embed .hero-eyebrow { font-size: 0.8em; } .animated-hero-embed .headline-part { font-size: 1.8em; } .animated-hero-embed .hero-cta { font-size: 0.9em; } .who-we-are-embed .section-eyebrow, .results-embed .section-eyebrow { font-size: 1.5em; } .who-we-are-embed .description-text, .results-embed .description-text { font-size: 1em; } .services-intro-banner-embed { padding: 40px 15px; } .services-intro-banner-embed .banner-title { font-size: 1.8em; } .services-intro-banner-embed .banner-subtext { font-size: 0.95em; } .services-intro-banner-embed .subtext-divider { width: 50px; } .services-grid-embed .service-title { font-size: 1.15em; } .cta-hook-embed .cta-headline { font-size: 1.8em; } }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .animated-hero-embed { padding: 120px 20px 60px; } .animated-hero-embed .headline-part { font-size: 2em; }
+            .who-we-are-embed, .client-results-bain-style { padding-left: 20px; padding-right: 20px; } 
+            .who-we-are-embed .content-wrapper, .client-results-bain-style .content-wrapper { flex-direction: column; gap: 30px; } 
+            .who-we-are-embed .section-eyebrow, .who-we-are-embed .description-text, .who-we-are-embed .button-container { text-align: left; } 
+            .client-results-bain-style .text-column { text-align: left; }
+            .who-we-are-embed .section-eyebrow { font-size: 1.8em; } .who-we-are-embed .description-text { hyphens: none; font-size: 1.05em; } 
+            .client-results-bain-style .main-headline { font-size: 2.2em; }
+            .client-results-bain-style .story-grid { grid-template-columns: 1fr; row-gap: 40px; }
+            .client-results-bain-style .story-box { min-height: auto; }
+            .services-intro-banner-embed { padding: 50px 20px; } .services-intro-banner-embed .banner-title { font-size: 2.1em; } .services-intro-banner-embed .content-wrapper { max-width: 100%; } 
+            .features-grid { grid-template-columns: 1fr; }
+            .insights-grid { grid-template-columns: 1fr; gap: 40px; }
+            .latest-insights-embed .section-eyebrow { text-align: center; } .latest-insights-embed .eyebrow-divider { margin-left: auto; margin-right: auto; }
+            .cta-hook-embed-white { padding: 50px 20px; } .cta-hook-embed-white .cta-headline { font-size: 2.2em; } 
+        }
+        @media (max-width: 480px) { 
+            .animated-hero-embed { padding-top: 100px; padding-bottom: 50px; min-height: 400px; } .animated-hero-embed .hero-eyebrow { font-size: 0.8em; } .animated-hero-embed .headline-part { font-size: 1.8em; } .animated-hero-embed .hero-cta { font-size: 0.9em; } 
+            .who-we-are-embed .section-eyebrow { font-size: 1.5em; } .who-we-are-embed .description-text { font-size: 1em; } 
+            .client-results-bain-style .main-headline { font-size: 1.8em; }
+            .client-results-bain-style .story-headline { font-size: 1.5em; }
+            .services-intro-banner-embed { padding: 40px 15px; } .services-intro-banner-embed .banner-title { font-size: 1.8em; } .services-intro-banner-embed .subtext-divider { width: 50px; } 
+            .cta-hook-embed-white .cta-headline { font-size: 1.8em; } 
+        }
     </style>
 </head>
 
 <body data-home-page="Home.html" data-home-page-title="Home" data-path-to-root="./" data-include-products="false" class="u-body u-clearfix u-xl-mode" data-lang="en">
     
-    <!-- HEADER PLACEHOLDER: The content will be loaded here by include.js -->
     <div id="header-placeholder"></div>
 
-    <!-- ===== START OF UNIQUE HOMEPAGE CONTENT ===== -->
     <section class="skrollable u-clearfix u-gradient u-image u-section-1" id="sec-0b67" data-image-width="6000" data-image-height="4000">
-        <div class="u-clearfix u-sheet u-sheet-1">
-            <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-1">
-                <div class="animated-hero-embed">
-                    <div class="hero-content">
-                        <p class="hero-eyebrow">Pro-bono Consulting Services</p>
-                        <div class="hero-headline-container">
-                            <span class="headline-part headline-part-1">Results</span><span class="headline-part headline-part-2">Driven.</span><span class="headline-part headline-part-3">Guaranteed</span><span class="headline-part headline-part-4">Precision.</span>
-                        </div>
-                        <a href="#" class="hero-cta"> Explore Our Services <span class="arrow-icon">→</span></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class="u-clearfix u-sheet u-sheet-1"><div class="u-clearfix u-custom-html u-expanded-width u-custom-html-1"><div class="animated-hero-embed"><div class="hero-content"><p class="hero-eyebrow">Consulting Services</p><div class="hero-headline-container"><span class="headline-part headline-part-1">Results</span><span class="headline-part headline-part-2">Driven.</span><span class="headline-part headline-part-3">Guaranteed</span><span class="headline-part headline-part-4">Precision.</span></div><a href="#" class="hero-cta"> Explore Our Services <span class="arrow-icon">→</span></a></div></div></div></div>
     </section>
-	
+    
     <section class="u-clearfix u-section-2" id="block-6">
-        <div class="u-clearfix u-sheet u-sheet-1">
-            <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-1">
-                <div class="who-we-are-embed">
-                    <div class="content-wrapper">
-                        <div class="text-column">
-                            <h2 class="section-eyebrow">Partner with us to shape your next breakthrough.</h2>
-                            <p class="description-text"> Qalam Consulting is a Brantford-based consulting firm built to support the growth of <strong>small and medium-sized businesses</strong>. We deliver <strong>tailored strategies</strong> across business, design, and research—grounded in <strong>insight</strong>, shaped by <strong>purpose</strong>, and focused on <strong>results</strong>. What began as a pro-bono initiative now operates as a <strong>purpose-driven firm</strong>, committed to solving real problems with <strong>clarity and impact</strong>.</p>
-                            <div class="button-container">
-                                <hr class="button-divider">
-                                <a href="#" class="service-button"><span class="button-text">What We Offer →</span></a>
-                            </div>
-                        </div>
-                        <div class="image-column">
-                            <img src="https://www.bigw.com.au/medias/sys_master/images/images/hd8/h49/66924228444190.jpg" alt="A person working collaboratively on a laptop in a modern office space.">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class="u-clearfix u-sheet u-sheet-1"><div class="u-clearfix u-custom-html u-expanded-width u-custom-html-1"><div class="who-we-are-embed"><div class="content-wrapper"><div class="text-column"><h2 class="section-eyebrow">Driving the results that matter most to your firm</h2><p class="description-text">Qalam Consulting is a Waterloo-based consulting firm dedicated to helping businesses excel. We provide tailored advisory solutions informed by market research, industry expertise, and previous client experience to deliver exceptional results. We began as a pro-bono initiative and have now become a results-driven consulting firm that’s committed to tackling even the most complex business challenges.</p><div class="button-container"><hr class="button-divider"><a href="#" class="service-button"><span class="button-text">What We Offer →</span></a></div></div><div class="image-column"><img src="https://www.bigw.com.au/medias/sys_master/images/images/hd8/h49/66924228444190.jpg" alt="A person working collaboratively on a laptop in a modern office space." width="500"></div></div></div></div></div>
     </section>
     
     <section class="u-clearfix u-section-3" id="block-5">
         <div class="u-clearfix u-sheet u-sheet-1">
             <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-1">
-                <div class="results-embed">
-                    <div class="content-wrapper">
-                        <div class="text-column">
-                            <h2 class="section-eyebrow">Bold Results for Growing Businesses.</h2>
-                            <p class="description-text"> From non-profits to small enterprises, we’ve helped local leaders turn insight into action—designing strategies that deliver measurable progress. </p>
-                            <div class="button-container">
-                                <hr class="button-divider">
-                                <a href="#" class="service-button"><span class="button-text">See Client Results →</span></a>
-                            </div>
-                        </div>
-                        <div class="image-column">
-                            <img src="https://www.bigw.com.au/medias/sys_master/images/images/hd8/h49/66924228444190.jpg" alt="A person working collaboratively on a laptop in a modern office space.">
-                        </div>
-                    </div>
+                <div class="client-results-bain-style">
+                    <div class="carousel-container"><div class="carousel-track"><div class="carousel-slide"><div class="content-wrapper"><div class="image-column"><img src="https://images.prismic.io/bain-white-production/0d971565-2706-4638-89c7-2525187e14f9_NatWest_Case-Study_Hero.jpeg?auto=compress,format" alt="A person using a phone to make a contactless payment."></div><div class="text-column"><h2 class="main-headline">The Qalam Advantage.</h2><p class="sub-headline">Here’s how we helped clients overcome difficult challenges</p><div class="story-grid"><div class="story-column client-story"><p class="story-eyebrow">client success story</p><hr class="story-divider"><div class="story-box"><h3 class="story-headline">Advising International Market Entry</h3><a href="#" class="story-link">learn more →</a></div></div><div class="story-column service-offering"><p class="story-eyebrow">services provided.</p><hr class="story-divider"><div class="story-box"><h3 class="story-headline">GTM and International Expansion Strategy</h3><a href="#" class="story-link">View Our Services →</a></div></div></div></div></div></div><div class="carousel-slide"><div class="content-wrapper"><div class="image-column"><img src="https://images.prismic.io/bain-white-production/0d971565-2706-4638-89c7-2525187e14f9_NatWest_Case-Study_Hero.jpeg?auto=compress,format" alt="A person using a phone to make a contactless payment."></div><div class="text-column"><h2 class="main-headline">The Qalam Advantage.</h2><p class="sub-headline">Here’s how we helped clients overcome difficult challenges</p><div class="story-grid"><div class="story-column client-story"><p class="story-eyebrow">client success story</p><hr class="story-divider"><div class="story-box"><h3 class="story-headline">Determining Optimal Pricing to Ensure Profitability and Market Success</h3><a href="#" class="story-link">Learn More →</a></div></div><div class="story-column service-offering"><p class="story-eyebrow">services provided.</p><hr class="story-divider"><div class="story-box"><h3 class="story-headline">Pricing Advisory</h3><a href="#" class="story-link">View Our Services →</a></div></div></div></div></div></div></div></div>
                 </div>
             </div>
+            <div class="carousel-pagination"><span class="carousel-dot active" data-index="0"></span><span class="carousel-dot" data-index="1"></span></div>
         </div>
     </section>
     
@@ -190,51 +180,138 @@
             <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-1">
                 <div class="services-intro-banner-embed">
                     <div class="content-wrapper">
-                        <h2 class="banner-title">Solutions that Drive Progress</h2>
-                        <p class="banner-subtext"> Our team works across strategy, marketing, finance, UX, and research to help small and medium-sized businesses unlock new opportunities and solve real challenges. </p>
+                        <h2 class="banner-title">Why Clients Choose Qalam</h2>
                         <div class="subtext-divider"></div>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <h3>Value for Cost</h3>
+                                <p>Our consulting services solve your toughest challenges while remaining affordable.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h3>Schedule Compatibility</h3>
+                                <p>Our consulting services adapt to your company’s schedule/deadlines to minimize disruptions to your team's workflow.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h3>Tailored Solutions</h3>
+                                <p>Our solutions are never cookie-cutter. We analyze your situation and deliver solutions that meet your needs.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h3>Innovative Solutions</h3>
+                                <p>We think outside the box to provide solutions that will give you an edge over your competitors.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <section class="u-clearfix u-section-5" id="block-3">
+    <section class="u-clearfix u-section-5" id="latest-insights">
         <div class="u-clearfix u-sheet u-sheet-1">
             <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-1">
-                <div class="services-grid-embed">
-                    <h2 class="section-eyebrow">Our Services</h2>
+                <div class="latest-insights-embed">
+                    <h2 class="section-eyebrow">Latest Insights</h2>
                     <div class="eyebrow-divider"></div>
-                    <div class="services-grid">
-                        <a href="#" class="service-item"><h3 class="service-title">Strategic Advisory</h3><div class="title-underline"></div><p class="service-description">We build comprehensive roadmaps for growth...</p><span class="arrow-icon">▶</span></a>
-                        <a href="#" class="service-item"><h3 class="service-title">Financial Advisory</h3><div class="title-underline"></div><p class="service-description">We enhance your bottom line...</p><span class="arrow-icon">▶</span></a>
-                        <a href="#" class="service-item"><h3 class="service-title">Market Research</h3><div class="title-underline"></div><p class="service-description">Our tailored research services provide deep insights...</p><span class="arrow-icon">▶</span></a>
-                        <a href="#" class="service-item"><h3 class="service-title">Crisis-Strategy Consulting</h3><div class="title-underline"></div><p class="service-description">In times of uncertainty, we provide critical support...</p><span class="arrow-icon">▶</span></a>
+                    <div class="insights-grid">
+                        <!-- Insight Card 1 -->
+                        <a href="/insights/insight1.html" class="insight-card">
+                            <div class="insight-image-container"><img src="https://picsum.photos/600/400?random=1" alt="Go-To-Market Strategy"></div>
+                            <div class="insight-content">
+                                <p class="insight-category">Frameworks & Guides</p>
+                                <h3 class="insight-title">How to Build a Winning GTM Strategy</h3>
+                                <p class="insight-description">A step-by-step plan for launching a new product or expanding into a new market, helping you set your next product launch up for success.</p>
+                                <span class="insight-link">Read More →</span>
+                            </div>
+                        </a>
+                        <!-- Insight Card 2 (Lorem Ipsum) -->
+                        <a href="#" class="insight-card">
+                            <div class="insight-image-container"><img src="https://picsum.photos/600/400?random=2" alt="Placeholder Insight"></div>
+                            <div class="insight-content">
+                                <p class="insight-category">Market Research</p>
+                                <h3 class="insight-title">Lorem Ipsum Dolor Sit Amet Consectetur</h3>
+                                <p class="insight-description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+                                <span class="insight-link">Read More →</span>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
-    <section class="u-black u-clearfix u-section-6" id="block-7">
+
+    <section class="u-clearfix u-section-6" id="block-7">
         <div class="u-clearfix u-sheet u-sheet-1">
             <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-1">
-                <div class="cta-hook-embed">
+                <div class="cta-hook-embed-white">
                     <div class="cta-content-wrapper">
-                        <h2 class="cta-headline">Let's Build Something Remarkable.</h2>
-                        <a href="#" class="cta-button"><span class="button-text">Let's Talk</span></a>
+                        <h2 class="cta-headline">Let's do something remarkable.</h2>
+                        <a href="#" class="cta-button"><span class="button-text">discuss your ideas with us</span></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- ===== END OF UNIQUE HOMEPAGE CONTENT ===== -->
-    
-    <!-- FOOTER PLACEHOLDER: The content will be loaded here by include.js -->
     <div id="footer-placeholder"></div>
 
-    <!-- This script loads the header and footer into the placeholders above -->
     <script src="include.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const track = document.querySelector('.carousel-track');
+            if (!track) return; 
 
+            const slides = Array.from(track.children);
+            if (slides.length <= 1) return; 
+
+            const dots = document.querySelectorAll('.carousel-dot');
+            let slideWidth = slides.length > 0 ? slides[0].getBoundingClientRect().width : 0;
+            let currentIndex = 0;
+            let slideInterval;
+
+            const goToSlide = (targetIndex) => {
+                if (!slides[targetIndex]) return;
+                slideWidth = slides[targetIndex].getBoundingClientRect().width;
+                track.style.transform = 'translateX(-' + (slideWidth * targetIndex) + 'px)';
+                dots.forEach((dot, index) => {
+                    dot.classList.remove('active');
+                    if (index === targetIndex) { dot.classList.add('active'); }
+                });
+                currentIndex = targetIndex;
+            };
+
+            const startCarousel = () => {
+                slideInterval = setInterval(() => {
+                    const nextIndex = (currentIndex + 1) % slides.length;
+                    goToSlide(nextIndex);
+                }, 10000); // 10 seconds
+            };
+
+            const resetCarousel = () => {
+                clearInterval(slideInterval);
+                startCarousel();
+            };
+
+            dots.forEach(dot => {
+                dot.addEventListener('click', e => {
+                    const targetIndex = parseInt(e.target.getAttribute('data-index'));
+                    goToSlide(targetIndex);
+                    resetCarousel();
+                });
+            });
+
+            window.addEventListener('resize', () => {
+                if(slides.length === 0) return;
+                const activeDot = document.querySelector('.carousel-dot.active');
+                const currentIndex = activeDot ? parseInt(activeDot.getAttribute('data-index')) : 0;
+                track.style.transition = 'none';
+                goToSlide(currentIndex);
+                setTimeout(() => { track.style.transition = 'transform 0.5s ease-in-out'; }, 50);
+            });
+
+            if(slides.length > 0) { 
+                goToSlide(0);
+                startCarousel();
+            }
+        });
+    </script>
 </body>
 </html>

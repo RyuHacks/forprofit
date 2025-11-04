@@ -1,4 +1,9 @@
+// include.js
 document.addEventListener("DOMContentLoaded", function() {
+    const DESKTOP_MIN_WIDTH = 992;
+    let isDesktop = window.innerWidth >= DESKTOP_MIN_WIDTH;
+
+    // --- Generic function to include HTML content ---
     const includeHTML = (elementId, filePath, callback) => {
         fetch(filePath)
             .then(response => {
@@ -18,70 +23,67 @@ document.addEventListener("DOMContentLoaded", function() {
             .catch(error => console.error('Error including HTML:', error));
     };
 
-    const initializeHeaderScripts = () => {
-        const headerEmbed = document.querySelector('.new-header-embed');
-        if (!headerEmbed) return;
-
-        const mainNav = headerEmbed.querySelector('.main-navigation');
-        const hamburgerBtn = headerEmbed.querySelector('.hamburger-menu');
-        const closeBtn = headerEmbed.querySelector('.close-menu');
-        const overlay = headerEmbed.querySelector('.menu-overlay');
-        
-        // --- Main Menu Toggle (Hamburger) ---
-        function openMenu() {
-            headerEmbed.classList.add('menu-open');
-            document.body.style.overflow = 'hidden';
-            hamburgerBtn.setAttribute('aria-expanded', 'true');
+    // --- Function to load a script dynamically ---
+    const loadScript = (src) => {
+        // Remove old script to prevent conflicts
+        const oldScript = document.querySelector(`script[src="${src}"]`);
+        if (oldScript) {
+            oldScript.remove();
         }
-
-        function closeMenu() {
-            headerEmbed.classList.remove('menu-open');
-            document.body.style.overflow = '';
-            hamburgerBtn.setAttribute('aria-expanded', 'false');
-            // Reset submenu state when closing main menu
-            mainNav.classList.remove('submenu-is-active');
-        }
-
-        hamburgerBtn.addEventListener('click', openMenu);
-        closeBtn.addEventListener('click', closeMenu);
-        overlay.addEventListener('click', closeMenu);
-
-        // --- NEW: Horizontal Submenu Slide Logic ---
-        const submenuTriggers = mainNav.querySelectorAll('.dropdown > a');
-        const backButtons = mainNav.querySelectorAll('.menu-back-btn');
-
-        submenuTriggers.forEach(trigger => {
-            trigger.addEventListener('click', function(event) {
-                // Only activate slide on mobile view
-                if (window.innerWidth <= 768) {
-                    event.preventDefault();
-                    mainNav.classList.add('submenu-is-active');
-                }
-            });
-        });
-
-        backButtons.forEach(button => {
-            button.addEventListener('click', function(event) {
-                event.preventDefault();
-                mainNav.classList.remove('submenu-is-active');
-            });
-        });
-        
-        // --- Active Class for Current Page ---
-        const navLinks = headerEmbed.querySelectorAll('.main-navigation a');
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-        
-        navLinks.forEach(link => {
-            const linkPage = (link.getAttribute('href') || '').split('/').pop();
-            link.parentElement.classList.remove('active');
-            if (linkPage === currentPage) {
-                link.parentElement.classList.add('active');
-            }
-        });
+        // Add new script
+        const script = document.createElement('script');
+        script.src = src;
+        script.defer = true;
+        document.body.appendChild(script);
     };
 
-    // Load header and run its scripts as a callback
-    includeHTML("header-placeholder", "_header.html", initializeHeaderScripts);
-    // Load footer
+    // --- Function to load a stylesheet dynamically ---
+    const loadCSS = (href) => {
+         // Remove old CSS to prevent conflicts
+        const oldLink = document.querySelector(`link[href="${href}"]`);
+        if (oldLink) {
+            oldLink.remove();
+        }
+        // Add new CSS
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = href;
+        document.head.appendChild(link);
+    };
+
+    // --- Main function to load the correct header ---
+    const loadResponsiveHeader = () => {
+        if (window.innerWidth >= DESKTOP_MIN_WIDTH) {
+            // --- LOAD DESKTOP ---
+            console.log('Loading Desktop Header');
+            loadCSS('headerd.css');
+            includeHTML("header-placeholder", "_headerd.html", () => {
+                loadScript('headerd.js');
+            });
+        } else {
+            // --- LOAD MOBILE ---
+            console.log('Loading Mobile Header');
+            loadCSS('headerm.css');
+            includeHTML("header-placeholder", "_headerm.html", () => {
+                loadScript('headerm.js');
+            });
+        }
+    };
+    
+    // --- Load Footer (remains the same) ---
     includeHTML("footer-placeholder", "_footer.html");
+
+    // --- Initial load ---
+    loadResponsiveHeader();
+
+    // --- Reload on resize across breakpoint ---
+    // This is the simplest and most reliable way to ensure the correct
+    // CSS and JS are active without complex cleanup logic.
+    window.addEventListener('resize', () => {
+        const wasDesktop = isDesktop;
+        isDesktop = window.innerWidth >= DESKTOP_MIN_WIDTH;
+        if (wasDesktop !== isDesktop) {
+            window.location.reload();
+        }
+    });
 });

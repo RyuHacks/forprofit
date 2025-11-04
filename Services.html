@@ -11,17 +11,20 @@
     <link rel="stylesheet" href="Services.css" media="screen">
 
     <link rel="stylesheet" href="headerstyles.css" media="screen">
+    <link rel="stylesheet" href="header.css" media="screen">
 
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
 
     <meta name="generator" content="Nicepage 7.11.4, nicepage.com">
-    <link rel="icon" href="images/favicon1.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png" media="(prefers-color-scheme: light)">
+
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96dark.png" media="(prefers-color-scheme: dark)">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     <script type="application/ld+json">{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": "QalamProfit2"
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": "QalamProfit2"
     }</script>
     <meta name="theme-color" content="#478ac9">
     <meta property="og:title" content="Services">
@@ -30,120 +33,171 @@
     <meta data-intl-tel-input-cdn-path="intlTelInput/">
 
     <style>
-      .about-hero-embed {
-        /* Add padding to push content below the absolute-positioned header */
-        padding-top: 150px !important; 
+        .about-hero-embed {
+            /* Add padding to push content below the absolute-positioned header */
+            padding-top: 150px !important; 
+        }
+        
+        .about-hero-embed *, .service-directory-embed *, .service-list-embed *, .how-we-work-embed *, .faq-embed *, .cta-hook-embed * { 
+            box-sizing: border-box; 
+        }
+
+        /* Hero Styles */
+        .about-hero-embed { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: #ffffff; padding: 0 40px 80px 20px; min-height: 500px; display: flex; align-items: center; }
+        .about-hero-embed .hero-content { max-width: 1200px; margin: 0; text-align: left; }
+        .about-hero-embed .hero-headline-container { margin-bottom: 10px; }
+        .about-hero-embed .headline-part { font-size: 0.77em; font-weight: 700; line-height: 1.3; color: #ffffff; display: block; opacity: 0; animation-fill-mode: forwards; }
+        .about-hero-embed .hero-subtext { font-size: 1.25em; line-height: 1.7; color: #e0e0e0; margin-top: 0; max-width: 750px; opacity: 0; animation-fill-mode: forwards; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .about-hero-embed .headline-part, .about-hero-embed .hero-subtext { animation-name: fadeInUp; animation-duration: 0.7s; animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        .about-hero-embed .headline-part-1 { animation-delay: 0.2s; }
+        .about-hero-embed .hero-subtext { animation-delay: 0.8s; }
+
+        /* Service Directory Styles */
+        .service-directory-embed { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; max-width: 1100px; margin: 60px auto; padding: 0 15px; color: #333; }
+        .service-directory-embed .directory-eyebrow { font-size: 0.9em; font-weight: 700; text-transform: uppercase; color: #1a1a1a; letter-spacing: 0.5px; margin-bottom: 10px; text-align: left; }
+        .service-directory-embed .eyebrow-divider { height: 1px; background-color: #000000; width: 100%; margin: 0 0 30px 0; }
+        .service-directory-embed .directory-list { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 20px 40px; list-style: none; margin: 0; padding: 0; }
+        .service-directory-embed .directory-list li a { color: #0056b3; text-decoration: none; font-size: 1.05em; font-weight: 500; display: inline-block; transition: transform 0.2s ease-out, text-decoration 0.2s ease-out; }
+        .service-directory-embed .directory-list li a:hover { text-decoration: underline; transform: translateX(4px); }
+        .service-directory-embed .directory-list li a::before { content: '›'; margin-right: 10px; font-weight: 700; }
+        
+        /* Service List Styles */
+        .service-list-embed { margin: 60px 0; padding: 0 40px; color: #333; }
+        .service-list-embed .section-eyebrow { font-family: "Graphik", Helvetica, sans-serif, "Lucida Sans Unicode"; font-size: 1.35em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #000000; margin-bottom: 12px; text-align: left; }
+        .service-list-embed .eyebrow-divider { height: 1px; width: 100%; background-color: #000000; margin: 0 0 40px 0; }
+        .service-list-embed .service-list-container { display: grid; grid-template-columns: 1fr 1fr; column-gap: 50px; row-gap: 50px; }
+        .service-list-embed .service-item { display: flex; flex-direction: column; }
+        
+        .service-list-embed .service-item h3 { 
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+            font-size: 1.3em; 
+            font-weight: 600; 
+            color: #222; 
+            margin-top: 0; 
+            margin-bottom: 15px; 
+            align-self: flex-start;
+            display: inline; 
+            padding-bottom: 10px; 
+            border-bottom: 1px solid #474747; 
+        }
+        
+        .service-list-embed .service-item p { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 0.95em; line-height: 1.6; color: #444444; text-align: left; margin-bottom: 25px; flex-grow: 1; }
+        .service-list-embed .service-button { display: inline-flex; text-decoration: none; cursor: pointer; }
+        .service-list-embed .button-text { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 0.68em; font-weight: 600; color: #000000; text-transform: uppercase; letter-spacing: 0.5px; position: relative; padding-bottom: 3px; }
+        .service-list-embed .button-text::after { content: ''; position: absolute; bottom: 0; left: 0; height: 2px; background-color: #000000; width: 0; transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+        .service-list-embed .service-button:hover .button-text::after { width: 100%; }
+
+        /* How We Work Styles */
+        .how-we-work-embed { font-family: "Graphik", Helvetica, sans-serif, "Lucida Sans Unicode"; max-width: 1100px; margin: 60px auto; padding: 0 15px; color: #cccccc; }
+        .how-we-work-embed .section-eyebrow { font-size: 1.4em; font-weight: 700; text-transform: uppercase; color: #bbbbbb; letter-spacing: 0.5px; margin-bottom: 10px; text-align: left; }
+        
+        .how-we-work-embed .eyebrow-divider { height: 1px; background-color: #555555; width: 100%; margin: 0 0 25px 0; }
+        
+        .how-we-work-embed .section-intro-text { font-size: 1.1em; line-height: 1.7; color: #e0e0e0; margin-bottom: 40px; max-width: 800px; }
+        .how-we-work-embed .work-steps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 50px; }
+        .how-we-work-embed .work-step-item { text-align: left; }
+        .how-we-work-embed .step-headline { font-size: 1.3em; font-weight: 600; color: #ffffff; margin-top: 0; margin-bottom: 12px; line-height: 1.3; }
+        .how-we-work-embed .step-description { font-size: 0.95em; color: #dddddd; line-height: 1.65; margin-top: 0; }
+
+        /* FAQ Styles */
+        .faq-embed { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; margin: 60px 0; padding: 0 40px; color: #333; }
+        .faq-embed .section-eyebrow { font-family: "Graphik", Helvetica, sans-serif, "Lucida Sans Unicode"; font-size: 1.35em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #000000; margin-bottom: 12px; text-align: left; }
+        .faq-embed .section-intro-text { font-size: 1.1em; line-height: 1.7; color: #444444; margin-bottom: 25px; max-width: 800px; }
+        .faq-embed .eyebrow-divider { height: 1px; width: 100%; background-color: #000000; margin: 0 0 40px 0; }
+        .faq-embed .faq-item { border-bottom: 1px solid #e0e0e0; }
+        .faq-embed .faq-item:first-child { border-top: 1px solid #e0e0e0; }
+        .faq-embed .faq-question { width: 100%; background-color: transparent; border: none; padding: 20px 0; text-align: left; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1.1em; font-weight: 600; color: #222; }
+        .faq-embed .faq-question:hover { color: #0056b3; }
+        .faq-embed .faq-icon { font-size: 1.5em; font-weight: 300; color: #555; transition: transform 0.3s ease; margin-left: 15px; }
+        .faq-embed .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out, padding 0.4s ease-out; }
+        .faq-embed .faq-answer p { font-size: 1em; line-height: 1.7; color: #444; margin: 0; padding: 0 15px 25px 0; max-width: 850px; }
+        
+        /* --- NEW: FIX for custom FAQ link style --- */
+        .custom-faq-link {
+            color: #0056b3; /* A nice, matching blue color */
+            font-size: inherit; /* This makes the link match the paragraph's font size */
+            text-decoration: underline;
+            transition: color 0.2s ease;
+        }
+        .custom-faq-link:hover {
+            color: #003d82; /* A slightly darker blue for hover */
+            text-decoration: none;
+        }
+        /* --- End of FIX --- */
+
+        .faq-embed .faq-item.active .faq-icon { transform: rotate(45deg); }
+        .faq-embed .faq-item.active .faq-answer { max-height: 300px; padding-top: 0; }
+
+        /* CTA Hook Styles */
+        .cta-hook-embed { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; margin: 60px 0; padding: 60px 40px; color: #333; border-top: 1px solid #000000; text-align: center; }
+        .cta-hook-embed .cta-content-wrapper { max-width: 700px; margin: 0 auto; }
+        .cta-hook-embed .cta-headline { font-family: "Graphik", Helvetica, sans-serif, "Lucida Sans Unicode"; font-size: 2.8em; font-weight: 600; color: #1a1a1a; line-height: 1.25; margin-top: 0; margin-bottom: 20px; }
+        .cta-hook-embed .cta-subtext { font-size: 1.1em; line-height: 1.7; color: #555555; margin-bottom: 30px; }
+        .cta-hook-embed .cta-button { display: inline-flex; text-decoration: none; cursor: pointer; }
+        .cta-hook-embed .button-text { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1em; font-weight: 600; color: #000000; text-transform: uppercase; letter-spacing: 0.8px; position: relative; padding-bottom: 4px; }
+        .cta-hook-embed .button-text::after { content: ''; position: absolute; bottom: 0; left: 0; height: 2px; background-color: #000000; width: 0; transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+        .cta-hook-embed .cta-button:hover .button-text::after { width: 100%; }
+
+        /* General Responsive Styles for Page */
+        @media (max-width: 768px) {
+          .about-hero-embed { padding: 0 20px 60px 10px; }
+          .about-hero-embed .headline-part { font-size: 0.64em; }
+          .about-hero-embed .hero-subtext { font-size: 1.1em; }
+          .service-directory-embed .directory-list { grid-template-columns: 1fr; gap: 15px 0; }
+          .service-directory-embed .directory-eyebrow { margin-bottom: 10px; }
+          .service-list-embed { padding: 0 20px; }
+          .service-list-embed .section-eyebrow { text-align: center; }
+          .service-list-embed .eyebrow-divider { margin-left: auto; margin-right: auto; }
+          .service-list-embed .service-list-container { grid-template-columns: 1fr; gap: 40px; }
+          .service-list-embed .service-item { text-align: center; } 
+          .service-list-embed .service-item p { text-align: left; hyphens: none; }
+          .how-we-work-embed .section-eyebrow, .how-we-work-embed .section-intro-text { text-align: center; }
+          .how-we-work-embed .eyebrow-divider { margin-left: auto; margin-right: auto; }
+          .how-we-work-embed .work-steps-grid { grid-template-columns: 1fr; gap: 35px; }
+          .how-we-work-embed .work-step-item { text-align: center; }
+          .faq-embed { padding: 0 20px; }
+          .faq-embed .section-eyebrow, .faq-embed .section-intro-text { text-align: center; max-width: 100%; }
+          .faq-embed .eyebrow-divider { margin-left: auto; margin-right: auto; }
+          .cta-hook-embed { padding: 50px 20px; }
+          .cta-hook-embed .cta-headline { font-size: 2.2em; }
+        }
+        @media (max-width: 480px) {
+          .about-hero-embed { padding: 0 15px 50px 8px; min-height: 400px; }
+          .about-hero-embed .headline-part { font-size: 0.55em; }
+          .about-hero-embed .hero-subtext { font-size: 1em; }
+          .service-directory-embed .directory-eyebrow { font-size: 0.85em; }
+          .service-directory-embed .directory-list li a { font-size: 1em; }
+          .how-we-work-embed .section-eyebrow { font-size: 0.75em; }
+          .how-we-work-embed .section-intro-text { font-size: 1em; }
+          .how-we-work-embed .step-headline { font-size: 1.2em; }
+          .how-we-work-embed .step-description { font-size: 0.9em; }
+          .cta-hook-embed .cta-headline { font-size: 1.8em; }
+          .cta-hook-embed .cta-subtext { font-size: 1em; }
+        }
+
+       /* --- UPDATED CSS FIX FOR FAQ SPACING & REMOVING LINE --- */
+      .faq-section .u-sheet-1,
+      .faq-section .u-custom-html-1 {
+        /* This removes the massive 888px minimum height */
+        min-height: auto !important;
       }
-      
-      .about-hero-embed *, .service-directory-embed *, .service-list-embed *, .how-we-work-embed *, .faq-embed *, .cta-hook-embed * { 
-        box-sizing: border-box; 
+
+      .faq-section .faq-embed {
+        /* Reduces space below the last FAQ item */
+        margin-bottom: 0;
+        padding-bottom: 20px;
       }
 
-      /* Hero Styles */
-      .about-hero-embed { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: #ffffff; padding: 0 40px 80px 20px; min-height: 500px; display: flex; align-items: center; }
-      .about-hero-embed .hero-content { max-width: 1200px; margin: 0; text-align: left; }
-      .about-hero-embed .hero-headline-container { margin-bottom: 10px; }
-      .about-hero-embed .headline-part { font-size: 0.77em; font-weight: 700; line-height: 1.3; color: #ffffff; display: block; opacity: 0; animation-fill-mode: forwards; }
-      .about-hero-embed .hero-subtext { font-size: 1.25em; line-height: 1.7; color: #e0e0e0; margin-top: 0; max-width: 750px; opacity: 0; animation-fill-mode: forwards; }
-      @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-      .about-hero-embed .headline-part, .about-hero-embed .hero-subtext { animation-name: fadeInUp; animation-duration: 0.7s; animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-      .about-hero-embed .headline-part-1 { animation-delay: 0.2s; }
-      .about-hero-embed .hero-subtext { animation-delay: 0.8s; }
+      .cta-section .cta-hook-embed {
+        /* THIS REMOVES THE PARTING LINE */
+        border-top: none;
 
-      /* Service Directory Styles */
-      .service-directory-embed { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; max-width: 1100px; margin: 60px auto; padding: 0 15px; color: #333; }
-      .service-directory-embed .directory-eyebrow { font-size: 0.9em; font-weight: 700; text-transform: uppercase; color: #1a1a1a; letter-spacing: 0.5px; margin-bottom: 10px; text-align: left; }
-      .service-directory-embed .eyebrow-divider { height: 1px; background-color: #000000; width: 40vw; max-width: 100%; margin: 0 0 30px 0; }
-      .service-directory-embed .directory-list { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 20px 40px; list-style: none; margin: 0; padding: 0; }
-      .service-directory-embed .directory-list li a { color: #0056b3; text-decoration: none; font-size: 1.05em; font-weight: 500; display: inline-block; transition: transform 0.2s ease-out, text-decoration 0.2s ease-out; }
-      .service-directory-embed .directory-list li a:hover { text-decoration: underline; transform: translateX(4px); }
-      .service-directory-embed .directory-list li a::before { content: '›'; margin-right: 10px; font-weight: 700; }
-      
-      /* Service List Styles */
-      .service-list-embed { margin: 60px 0; padding: 0 40px; color: #333; }
-      .service-list-embed .section-eyebrow { font-family: "Graphik", Helvetica, sans-serif, "Lucida Sans Unicode"; font-size: 1.35em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #000000; margin-bottom: 12px; text-align: left; }
-      .service-list-embed .eyebrow-divider { height: 1px; width: 100%; background-color: #000000; margin: 0 0 40px 0; }
-      .service-list-embed .service-list-container { display: grid; grid-template-columns: 1fr 1fr; column-gap: 50px; row-gap: 50px; }
-      .service-list-embed .service-item { display: flex; flex-direction: column; }
-      .service-list-embed .service-item h3 { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1.3em; font-weight: 600; color: #222; margin-top: 0; margin-bottom: 0; }
-      .service-list-embed .title-divider { border: none; height: 1px; background-color: #e0e0e0; width: 100%; margin: 10px 0 10px 0; }
-      .service-list-embed .service-item p { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 0.95em; line-height: 1.6; color: #444444; text-align: left; margin-bottom: 25px; flex-grow: 1; }
-      .service-list-embed .service-button { display: inline-flex; text-decoration: none; cursor: pointer; }
-      .service-list-embed .button-text { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 0.68em; font-weight: 600; color: #000000; text-transform: uppercase; letter-spacing: 0.5px; position: relative; padding-bottom: 3px; }
-      .service-list-embed .button-text::after { content: ''; position: absolute; bottom: 0; left: 0; height: 2px; background-color: #000000; width: 0; transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
-      .service-list-embed .service-button:hover .button-text::after { width: 100%; }
-
-      /* How We Work Styles */
-      .how-we-work-embed { font-family: "Graphik", Helvetica, sans-serif, "Lucida Sans Unicode"; max-width: 1100px; margin: 60px auto; padding: 0 15px; color: #cccccc; }
-      .how-we-work-embed .section-eyebrow { font-size: 1.4em; font-weight: 700; text-transform: uppercase; color: #bbbbbb; letter-spacing: 0.5px; margin-bottom: 10px; text-align: left; }
-      .how-we-work-embed .eyebrow-divider { height: 1px; background-color: #555555; width: 40vw; max-width: 100%; margin: 0 0 25px 0; }
-      .how-we-work-embed .section-intro-text { font-size: 1.1em; line-height: 1.7; color: #e0e0e0; margin-bottom: 40px; max-width: 800px; }
-      .how-we-work-embed .work-steps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 50px; }
-      .how-we-work-embed .work-step-item { text-align: left; }
-      .how-we-work-embed .step-headline { font-size: 1.3em; font-weight: 600; color: #ffffff; margin-top: 0; margin-bottom: 12px; line-height: 1.3; }
-      .how-we-work-embed .step-description { font-size: 0.95em; color: #dddddd; line-height: 1.65; margin-top: 0; }
-
-      /* FAQ Styles */
-      .faq-embed { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; margin: 60px 0; padding: 0 40px; color: #333; }
-      .faq-embed .section-eyebrow { font-family: "Graphik", Helvetica, sans-serif, "Lucida Sans Unicode"; font-size: 1.35em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #000000; margin-bottom: 12px; text-align: left; }
-      .faq-embed .section-intro-text { font-size: 1.1em; line-height: 1.7; color: #444444; margin-bottom: 25px; max-width: 800px; }
-      .faq-embed .eyebrow-divider { height: 1px; width: 100%; background-color: #000000; margin: 0 0 40px 0; }
-      .faq-embed .faq-item { border-bottom: 1px solid #e0e0e0; }
-      .faq-embed .faq-item:first-child { border-top: 1px solid #e0e0e0; }
-      .faq-embed .faq-question { width: 100%; background-color: transparent; border: none; padding: 20px 0; text-align: left; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1.1em; font-weight: 600; color: #222; }
-      .faq-embed .faq-question:hover { color: #0056b3; }
-      .faq-embed .faq-icon { font-size: 1.5em; font-weight: 300; color: #555; transition: transform 0.3s ease; margin-left: 15px; }
-      .faq-embed .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out, padding 0.4s ease-out; }
-      .faq-embed .faq-answer p { font-size: 1em; line-height: 1.7; color: #444; margin: 0; padding: 0 15px 25px 0; max-width: 850px; }
-      .faq-embed .faq-item.active .faq-icon { transform: rotate(45deg); }
-      .faq-embed .faq-item.active .faq-answer { max-height: 300px; padding-top: 0; }
-
-      /* CTA Hook Styles */
-      .cta-hook-embed { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; margin: 60px 0; padding: 60px 40px; color: #333; border-top: 1px solid #000000; text-align: center; }
-      .cta-hook-embed .cta-content-wrapper { max-width: 700px; margin: 0 auto; }
-      .cta-hook-embed .cta-headline { font-family: "Graphik", Helvetica, sans-serif, "Lucida Sans Unicode"; font-size: 2.8em; font-weight: 600; color: #1a1a1a; line-height: 1.25; margin-top: 0; margin-bottom: 20px; }
-      .cta-hook-embed .cta-subtext { font-size: 1.1em; line-height: 1.7; color: #555555; margin-bottom: 30px; }
-      .cta-hook-embed .cta-button { display: inline-flex; text-decoration: none; cursor: pointer; }
-      .cta-hook-embed .button-text { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 1em; font-weight: 600; color: #000000; text-transform: uppercase; letter-spacing: 0.8px; position: relative; padding-bottom: 4px; }
-      .cta-hook-embed .button-text::after { content: ''; position: absolute; bottom: 0; left: 0; height: 2px; background-color: #000000; width: 0; transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
-      .cta-hook-embed .cta-button:hover .button-text::after { width: 100%; }
-
-      /* General Responsive Styles for Page */
-      @media (max-width: 768px) {
-        .about-hero-embed { padding: 0 20px 60px 10px; }
-        .about-hero-embed .headline-part { font-size: 0.64em; }
-        .about-hero-embed .hero-subtext { font-size: 1.1em; }
-        .service-directory-embed .directory-list { grid-template-columns: 1fr; gap: 15px 0; }
-        .service-directory-embed .directory-eyebrow { margin-bottom: 10px; }
-        .service-list-embed { padding: 0 20px; }
-        .service-list-embed .section-eyebrow { text-align: center; }
-        .service-list-embed .eyebrow-divider { margin-left: auto; margin-right: auto; }
-        .service-list-embed .service-list-container { grid-template-columns: 1fr; gap: 40px; }
-        .service-list-embed .service-item { text-align: center; }
-        .service-list-embed .service-item p { text-align: left; hyphens: none; }
-        .how-we-work-embed .section-eyebrow, .how-we-work-embed .section-intro-text { text-align: center; }
-        .how-we-work-embed .eyebrow-divider { margin-left: auto; margin-right: auto; }
-        .how-we-work-embed .work-steps-grid { grid-template-columns: 1fr; gap: 35px; }
-        .how-we-work-embed .work-step-item { text-align: center; }
-        .faq-embed { padding: 0 20px; }
-        .faq-embed .section-eyebrow, .faq-embed .section-intro-text { text-align: center; max-width: 100%; }
-        .faq-embed .eyebrow-divider { margin-left: auto; margin-right: auto; }
-        .cta-hook-embed { padding: 50px 20px; }
-        .cta-hook-embed .cta-headline { font-size: 2.2em; }
+        /* Adjusts spacing to look clean without the line */
+        margin-top: 0;
+        padding-top: 60px; /* Increased padding to create separation */
       }
-      @media (max-width: 480px) {
-        .about-hero-embed { padding: 0 15px 50px 8px; min-height: 400px; }
-        .about-hero-embed .headline-part { font-size: 0.55em; }
-        .about-hero-embed .hero-subtext { font-size: 1em; }
-        .service-directory-embed .directory-eyebrow { font-size: 0.85em; }
-        .service-directory-embed .directory-list li a { font-size: 1em; }
-        .how-we-work-embed .section-eyebrow { font-size: 0.75em; }
-        .how-we-work-embed .section-intro-text { font-size: 1em; }
-        .how-we-work-embed .step-headline { font-size: 1.2em; }
-        .how-we-work-embed .step-description { font-size: 0.9em; }
-        .cta-hook-embed .cta-headline { font-size: 1.8em; }
-        .cta-hook-embed .cta-subtext { font-size: 1em; }
-      }
+
     </style>
 </head>
 
@@ -157,7 +211,7 @@
                 <div class="about-hero-embed">
                     <div class="hero-content">
                         <h1 class="hero-headline-container"><span class="headline-part headline-part-1">Our Services</span></h1>
-                        <p class="hero-subtext">Smart, research-driven solutions for real business<br>challenges.</p>
+                        <p class="hero-subtext">Advisory solutions for businesses of all sizes and industries</p>
                     </div>
                 </div>
             </div>
@@ -168,13 +222,15 @@
         <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
             <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-1">
                 <div class="service-directory-embed">
-                    <h4 class="directory-eyebrow">Service Directory</h4>
+                    <h4 class="directory-eyebrow" style="font-size: 22px;">Service Directory</h4>
                     <div class="eyebrow-divider"></div>
                     <ul class="directory-list">
-                        <li><a href="#">Strategy Advising</a></li>
+                        <li><a href="#">Strategic Advisory</a></li>
+                        <li><a href="#">Startup Advisory</a></li>
+                        <li><a href="#">Financial Advisory</a></li>
+                        <li><a href="#">Business Resiliency</a></li>
+                        <li><a href="#">Marketing Advisory</a></li>
                         <li><a href="#">Market Research</a></li>
-                        <li><a href="#">Financial Advising</a></li>
-                        <li><a href="#">Crisis-Strategy Consulting</a></li>
                     </ul>
                 </div>
             </div>
@@ -190,27 +246,33 @@
                     <div class="service-list-container">
                         <div class="service-item">
                             <h3>Strategic Advisory</h3>
-                            <hr class="title-divider">
-                            <p>Our strategic advisory service equips businesses to make <strong>informed moves</strong> in dynamic markets. Whether you're planning a <strong>market entry strategy</strong>, designing a <strong>go-to-market (GTM) approach</strong>, or analyzing your <strong>competitive landscape</strong>, we help you position for growth. We also develop long-term growth strategies tailored to your goals and resources.</p>
-                            <a href="#" class="service-button"><span class="button-text">Explore this service →</span></a>
+                            <p>Our strategic advisory services help businesses make the right decisions to achieve their goals in today’s competitive landscape. Whether you want to increase sales, enter a new market, or even surpass your competitors, we can help. Every strategy we develop is tailored based on your resources, priorities, and long-term objectives.</p>
+                            <a href="#" class="service-button"><span class="button-text">Learn more →</span></a>
+                        </div>
+                        <div class="service-item">
+                            <h3>Startup Advisory</h3>
+                            <p>For startups in need of capital, a GTM strategy, financial advisory, or other assistance, we offer the perfect solution. Our startup advisory services are tailored all-in-one advisory solutions, which are provided at a discounted price to ensure you receive comprehensive assistance at an affordable price.</p>
+                            <a href="#" class="service-button"><span class="button-text">Learn more →</span></a>
                         </div>
                         <div class="service-item">
                             <h3>Financial Advisory</h3>
-                            <hr class="title-divider">
-                            <p>We support your financial decision-making through in-depth <strong>pricing and profitability analysis</strong>, smart <strong>cost optimization</strong> strategies, and comprehensive <strong>financial planning and analysis</strong>. Our goal is to ensure your finances are aligned with scalable, sustainable growth.</p>
-                            <a href="#" class="service-button"><span class="button-text">Explore this service →</span></a>
+                            <p>Our financial advisory services can help you develop the most profitable market price, eliminate unnecessary expenditures, or budget/forecast future operations. Our goal is to ensure your finances create a conducive environment for scalable and sustainable growth.</p>
+                            <a href="#" class="service-button"><span class="button-text">Learn more →</span></a>
+                        </div>
+                        <div class="service-item">
+                            <h3>Business Resiliency</h3>
+                            <p>Our business resiliency services help businesses stay grounded in times of uncertainty. We offer economic and financial crisis advisory, risk/vulnerability assessments, and actionable crisis management strategies. This protects your business and ensures you operate resiliently.</p>
+                            <a href="#" class="service-button"><span class="button-text">Learn more →</span></a>
+                        </div>
+                        <div class="service-item">
+                            <h3>Marketing Advisory</h3>
+                            <p>Our marketing advisory services ensure your business gains the exposure it needs to grow. From building a strong brand identity to designing customer engagement strategies and conducting in-depth market research, we craft solutions that connect you with your audience.</p>
+                            <a href="#" class="service-button"><span class="button-text">Learn more →</span></a>
                         </div>
                         <div class="service-item">
                             <h3>Market Research</h3>
-                            <hr class="title-divider">
-                            <p>We deliver precise, <strong>insight-driven research</strong> customized to your business needs. Our capabilities include thorough industry research, emerging <strong>new technology investigations</strong>, and fully tailored research projects that <strong>inform strategy, design, and execution</strong>.</p>
-                            <a href="#" class="service-button"><span class="button-text">Explore this service →</span></a>
-                        </div>
-                        <div class="service-item">
-                            <h3>Crisis-Strategy Consulting</h3>
-                            <hr class="title-divider">
-                            <p>In times of uncertainty, we help businesses stay grounded. We offer expert <strong>economic and financial crisis advisory</strong>, detailed <strong>risk assessments and vulnerability analysis</strong>, and actionable <strong>crisis management strategies</strong> that protect your business and ensure resilience.</p>
-                            <a href="#" class="service-button"><span class="button-text">Explore this service →</span></a>
+                            <p>We deliver precise, insight-driven, and tailored market research customized to your business needs. This includes thorough research on the industry, a competitive landscape analysis, emerging trends, and much more.</p>
+                            <a href="#" class="service-button"><span class="button-text">Learn more →</span></a>
                         </div>
                     </div>
                 </div>
@@ -222,25 +284,25 @@
         <div class="u-clearfix u-sheet u-sheet-1">
             <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-1">
                 <div class="how-we-work-embed">
-                    <h4 class="section-eyebrow">How We Work</h4>
+                    <h4 class="section-eyebrow">The Qalam Process</h4>
                     <div class="eyebrow-divider"></div>
-                    <p class="section-intro-text">Our approach is built on clarity, collaboration, and results. Every engagement follows a proven process—tailored to meet your needs and deliver measurable impact.</p>
+                    <p class="section-intro-text">The Qalam approach is based on collaboration, research, and results. Every engagement follows a structured process tailored to meet your needs and deliver measurable impact.</p>
                     <div class="work-steps-grid">
                         <div class="work-step-item">
-                            <h3 class="step-headline">1. Discover</h3>
-                            <p class="step-description">We begin by listening—closely. Through client conversations, stakeholder interviews, and business audits, we develop a clear understanding of your goals, challenges, and context.</p>
+                            <h3 class="step-headline">1. Listen</h3>
+                            <p class="step-description">We begin by meeting with clients to understand what their values, goals, and challenges are. We listen and ask questions to understand their pain points, organizational context, and desired outcome.</p>
                         </div>
                         <div class="work-step-item">
-                            <h3 class="step-headline">2. Analyze</h3>
-                            <p class="step-description">Our team conducts targeted research and internal reviews to uncover insights. Whether it’s market data, financial performance, or user behavior, we analyze what matters most to your success.</p>
+                            <h3 class="step-headline">2. Research</h3>
+                            <p class="step-description">Our team conducts research to uncover insights. Whether it’s market data, financial performance, or user behavior, we analyze what matters most for your success. We also meet with the client at this point to ask questions and provide project updates.</p>
                         </div>
                         <div class="work-step-item">
                             <h3 class="step-headline">3. Strategize</h3>
-                            <p class="step-description">With a strong foundation in place, we develop custom strategies rooted in evidence and aligned with your business objectives—whether that’s growth, clarity, or resilience.</p>
+                            <p class="step-description">We synthesize the research we gathered with the information you provided us earlier to develop a custom strategy that aligns with your goals and values.</p>
                         </div>
                         <div class="work-step-item">
-                            <h3 class="step-headline">4. Deliver &amp; Refine</h3>
-                            <p class="step-description">We help implement the solution and continue refining it as needed. From follow-ups to feedback, we stay engaged to ensure results are realized and improvements continue.</p>
+                            <h3 class="step-headline">4. Deliver</h3>
+                            <p class="step-description">We present the solution to you and provide instructions on implementing the solution internally. We also monitor progress to ensure your goals are being met.</p>
                         </div>
                     </div>
                 </div>
@@ -248,37 +310,31 @@
         </div>
     </section>
 
-    <section class="u-clearfix u-section-5" id="block-6">
+    <section class="u-clearfix u-section-5 faq-section" id="block-6">
         <div class="u-clearfix u-sheet u-valign-middle-xl u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xs u-sheet-1">
             <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-1">
                 <div class="faq-embed">
-                    <h2 class="section-eyebrow">Frequently Asked Questions</h2>
-                    <p class="section-intro-text">Got questions? We’ve answered a few below. If you're wondering how Qalam works, what to expect, or how to get started—this is a good place to begin.</p>
-                    <div class="eyebrow-divider"></div>
+                    <h2 class="section-eyebrow">Frequently Asked Questions (FAQ)</h2>
                     <div class="faq-accordion">
                         <div class="faq-item">
-                            <button class="faq-question"><span>How do your consulting services work?</span><span class="faq-icon">+</span></button>
-                            <div class="faq-answer"><p>We follow a structured process: discovery, research, strategy development, and delivery. Every engagement is customized to your business needs, with clear communication at every step.</p></div>
-                        </div>
-                        <div class="faq-item">
-                            <button class="faq-question"><span>Do you only work with small businesses?</span><span class="faq-icon">+</span></button>
-                            <div class="faq-answer"><p>While small and medium-sized businesses are our focus, we also work with nonprofits, startups, and growing organizations at various stages.</p></div>
-                        </div>
-                        <div class="faq-item">
-                            <button class="faq-question"><span>What if I only need help with one part of my business?</span><span class="faq-icon">+</span></button>
-                            <div class="faq-answer"><p>That’s completely fine. Our services are modular—you can engage us for a single project or for full advisory support.</p></div>
+                            <button class="faq-question"><span>Why would I need consulting services?</span><span class="faq-icon">+</span></button>
+                            <div class="faq-answer"><p>If your business is facing a challenge or simply just wants to become more profitable, consulting services can provide both the roadmap and the compass to achieve your goals/solve those problems. This is because consultants typically have robust expertise across numerous industries, combined with practical experience and knowledge of market dynamics. This allows consultants to assist firms at a fraction of the cost, allowing them to compete with competitors who may have an entire team of in-house advisors. This allows your business to focus on what it does best, while consultants handle the areas where our expertise adds the most value.</p></div>
                         </div>
                         <div class="faq-item">
                             <button class="faq-question"><span>How much do your services cost?</span><span class="faq-icon">+</span></button>
-                            <div class="faq-answer"><p>Our pricing is flexible and based on the scope of the project. We’ll work with you to define the engagement and provide a clear quote upfront.</p></div>
+                            <div class="faq-answer"><p>Our pricing varies depending on the specifics of the project and the size of the firm we are servicing. For information on the costs of a specific project, please <a href="contact.html" class="custom-faq-link">contact us</a>.</p></div>
                         </div>
                         <div class="faq-item">
                             <button class="faq-question"><span>How long does a typical engagement take?</span><span class="faq-icon">+</span></button>
-                            <div class="faq-answer"><p>Timelines vary depending on the project, but most engagements range from 2 to 8 weeks. We’ll establish milestones and a delivery schedule during the discovery phase.</p></div>
+                            <div class="faq-answer"><p>The time frame for projects depends on the specifics of the project. However, as a general rule, our projects take about 3 - 8 weeks to complete.</p></div>
                         </div>
                         <div class="faq-item">
-                            <button class="faq-question"><span>Do you offer ongoing support after the project ends?</span><span class="faq-icon">+</span></button>
-                            <div class="faq-answer"><p>Yes—we often continue working with clients in an advisory capacity or through follow-up sprints to ensure lasting impact.</p></div>
+                            <button class="faq-question"><span>Why should we choose you over another consulting firm?</span><span class="faq-icon">+</span></button>
+                            <div class="faq-answer"><p>Our services are priced more competitively than other firms while also still being of exceptional quality. In addition, we offer these services within a much more reasonable time frame than our competitors.</p></div>
+                        </div>
+                         <div class="faq-item">
+                            <button class="faq-question"><span>Do you have solutions specifically for startups?</span><span class="faq-icon">+</span></button>
+                            <div class="faq-answer"><p>Yes, we do. We offer all-in-one startup-specific advisory solutions that are provided to startups at a discounted price. This allows startups to receive assistance in marketing, strategy, financial advisory, and more, all for an affordable price. Please see our <a href="Startup.html" class="custom-faq-link">startup advisory page</a> for more information.</p></div>
                         </div>
                     </div>
                 </div>
@@ -286,7 +342,7 @@
         </div>
     </section>
 
-    <section class="u-clearfix u-section-6" id="block-7">
+    <section class="u-clearfix u-section-6 cta-section" id="block-7">
         <div class="u-clearfix u-sheet u-sheet-1">
             <div class="u-clearfix u-custom-html u-expanded-width u-custom-html-1">
                 <div class="cta-hook-embed">

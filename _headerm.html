@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Header Component</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="header.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-main">
+                <!-- UPDATED LOGO -->
+                <a href="index.html" class="logo">
+                    <img src="https://i.postimg.cc/x8yk6s1w/QCLogo-Alternatelowres.png" alt="Qalam Consulting Logo">
+                </a>
+
+                <div>
+                    <button id="mobile-menu-button">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path class="hamburger-line hamburger-top" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16"></path>
+                            <path class="hamburger-line hamburger-middle" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 12h16"></path>
+                            <path class="hamburger-line hamburger-bottom" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <nav id="mobile-menu">
+                <a href="index.html">Home</a>
+
+                <div>
+                    <button class="dropdown-button" data-mobile-dropdown-button>
+                        <span>About</span>
+                        <span class="dropdown-indicator" aria-hidden="true"></span>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="About.html">About Us</a>
+                        <a href="Testimonials.html">Clients' Success Stories</a>
+                        <a href="Careers.html">Careers</a>
+                    </div>
+                </div>
+
+                <div>
+                    <button class="dropdown-button" data-mobile-dropdown-button>
+                        <span>Our Services</span>
+                        <span class="dropdown-indicator" aria-hidden="true"></span>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="Services.html">Our Services</a>
+                        <span class="dropdown-category first">Consulting Services</span>
+                        <a href="Strategy.html">Strategic Advisory</a>
+                        <a href="Financial.html">Financial Advisory</a>
+                        <a href="Startup.html">Startup Advisory</a>
+                        <a href="Business-Resiliency.html">Business Resiliency</a>
+                        <a href="Marketing.html">Market Advisory</a>
+                        <a href="Research.html">Market Research</a>
+
+                        <span class="dropdown-category subsequent">Insights</span>
+                        <a href="Insights.html">Insights</a>
+
+                        <span class="dropdown-category subsequent">Newsroom</span>
+                        <a href="Newsroom.html">Latest News</a>
+                    </div>
+                </div>
+
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- External JavaScript -->
+    <script src="header.js"></script>
+
+</body>
+</html>

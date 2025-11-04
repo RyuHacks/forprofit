@@ -1,0 +1,275 @@
+/* Qalam Consulting — Header Styles (Desktop unchanged, Mobile redesigned)
+   Last updated: 2025-09-14 */
+
+/* ------------------------------------------------------------------- */
+/* 1. CSS Variables and Base Styles
+/* ------------------------------------------------------------------- */
+
+.new-header-embed {
+  --header-bg: #000000;
+  --header-text: #FFFFFF;
+  --mega-menu-bg: #1a1a1a;
+  --mega-menu-text: #cccccc;
+  --link-hover-color: #FFFFFF;
+  --border-color-subtle: rgba(255, 255, 255, 0.2);
+
+  --mobile-menu-bg: #FFFFFF;    /* overridden on mobile to #000 */
+  --mobile-menu-text: #1a1a1a;  /* overridden on mobile to #fff */
+  --mobile-menu-border: #e0e0e0;/* overridden on mobile */
+
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --header-height: 80px;
+  --content-max-width: 1320px;
+  --tap-target: 56px;
+}
+
+/* Light theme overrides (used when data-theme="light") */
+.new-header-embed[data-theme="light"] {
+  --header-bg: #ffffff;
+  --header-text: #111111;
+  --mega-menu-bg: #ffffff;
+  --mega-menu-text: #333333;
+  --link-hover-color: #000000;
+  --border-color-subtle: rgba(0, 0, 0, 0.12);
+
+  --mobile-menu-bg: #ffffff;
+  --mobile-menu-text: #111111;
+  --mobile-menu-border: #e5e5e5;
+}
+
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-family); }
+.no-scroll { overflow: hidden; }
+
+/* ------------------------------------------------------------------- */
+/* 2. Main Header Bar (shared)
+/* ------------------------------------------------------------------- */
+
+.new-header-embed {
+  position: absolute; top: 0; left: 0; width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  border-bottom: 1px solid transparent;
+}
+.new-header-embed:hover {
+  background-color: var(--header-bg);
+  border-bottom-color: var(--border-color-subtle);
+}
+
+.main-header {
+  display: flex; justify-content: space-between; align-items: center;
+  height: var(--header-height);
+  color: var(--header-text);
+  max-width: var(--content-max-width);
+  margin: 0 auto; padding: 0 24px; position: relative;
+}
+
+.logo-container a { display: flex; align-items: center; }
+.logo-container img { max-height: 35px; width: auto; }
+
+/* ------------------------------------------------------------------- */
+/* 3. Mobile (≤991px) — Redesigned + Dark Theme
+/* ------------------------------------------------------------------- */
+
+.hamburger-menu {
+  background: none; border: none; cursor: pointer; padding: 10px;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  width: 30px; height: 22px; z-index: 1002; gap: 6px;
+}
+.hamburger-bar { display: block; width: 100%; height: 2px; background-color: var(--header-text); transition: transform 0.3s ease, opacity 0.3s ease; }
+
+.menu-overlay {
+  position: fixed; inset: 0;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 998; opacity: 0; visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0s 0.3s;
+}
+.menu-open .menu-overlay { opacity: 1; visibility: visible; transition: opacity 0.3s ease; }
+
+/* Off-canvas drawer */
+.main-navigation {
+  position: fixed; top: 0; right: -100%;
+  width: min(85%, 380px); height: 100vh;
+  background-color: var(--mobile-menu-bg); color: var(--mobile-menu-text);
+  z-index: 999; transition: right 0.4s cubic-bezier(0.23,1,0.32,1);
+  overflow-y: auto; display: flex; flex-direction: column;
+  padding-bottom: max(16px, env(safe-area-inset-bottom));
+}
+.menu-open .main-navigation { right: 0; }
+
+.mobile-menu-header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0 20px; height: var(--header-height);
+  border-bottom: 1px solid var(--mobile-menu-border);
+  padding-top: max(0px, env(safe-area-inset-top));
+}
+.mobile-menu-header .logo-container img { max-height: 30px; }
+.close-menu { background: none; border: none; font-size: 2.2rem; line-height: 1; font-weight: 300; color: #888; cursor: pointer; }
+
+/* Quick links */
+.primary-links { list-style: none; }
+.primary-links > li > a {
+  display: block; text-decoration: none; color: var(--mobile-menu-text);
+  padding: 18px 20px; font-size: 1.05rem; font-weight: 600;
+  border-bottom: 1px solid var(--mobile-menu-border);
+  min-height: var(--tap-target); line-height: 1.2; position: relative;
+}
+.primary-links > li > a:hover { background-color: #f7f7f7; }
+
+/* Hide desktop dropdown content on mobile drawer */
+@media (max-width: 991px) {
+  /* Dark variables just for mobile */
+  :root {
+    --mobile-menu-bg: #000000;
+    --mobile-menu-text: #ffffff;
+    --mobile-menu-border: rgba(255, 255, 255, 0.15);
+  }
+
+  .new-header-embed { position: fixed; background-color: var(--header-bg); border-bottom-color: var(--border-color-subtle); }
+  .mega-menu-content { display: none !important; }
+  .dropdown-menu { display: none !important; }
+  .submenu-header-mobile, .dropdown-grid { display: none !important; }
+
+  /* Transform hamburger to X when open */
+  .menu-open .hamburger-menu .hamburger-bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .menu-open .hamburger-menu .hamburger-bar:nth-child(2) { opacity: 0; }
+  .menu-open .hamburger-menu .hamburger-bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+  /* Dark theming for drawer content */
+  .main-navigation { background-color: var(--mobile-menu-bg); color: var(--mobile-menu-text); }
+  .mobile-menu-header { background: #000000; border-bottom-color: var(--mobile-menu-border); }
+  .close-menu { color: #ffffff; }
+
+  .primary-links > li > a { color: #ffffff; border-bottom: 1px solid var(--mobile-menu-border); }
+  .primary-links > li > a:hover { background-color: #0f0f0f; }
+
+  .mobile-section-title { color: #aaaaaa; }
+  .accordion-trigger {
+    background: #0a0a0a; color: #ffffff; border-color: var(--mobile-menu-border);
+  }
+  .accordion-trigger::after { border-color: #bbbbbb; }
+  .accordion-panel { border-left: 2px solid rgba(255,255,255,0.12); }
+  .accordion-list li a { color: #dddddd; border-bottom: 1px dashed var(--mobile-menu-border); }
+  .accordion-list li a:hover { background: #111111; }
+
+  .mobile-cta { background: #ffffff; color: #000000; }
+}
+  
+/* Mobile accordion block */
+.mobile-services-accordion { display: block; padding: 12px 20px 24px; }
+.mobile-section-title {
+  font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  color: #666; margin: 16px 0 8px;
+}
+
+.accordion-trigger {
+  width: 100%; text-align: left; background: #fafafa; color: #111;
+  border: 1px solid var(--mobile-menu-border); border-radius: 12px;
+  padding: 14px 16px; font-size: 1rem; font-weight: 600;
+  margin: 10px 0; position: relative; min-height: var(--tap-target);
+}
+.accordion-trigger::after {
+  content: ""; position: absolute; right: 16px; top: 50%; transform: translateY(-50%) rotate(0deg);
+  width: 10px; height: 10px; border-right: 2px solid #666; border-bottom: 2px solid #666; transition: transform 0.25s ease;
+}
+.accordion-trigger[aria-expanded="true"]::after { transform: translateY(-50%) rotate(225deg); }
+
+.accordion-panel[hidden] { display: none; }
+.accordion-panel { margin: 8px 0 14px 8px; padding-left: 12px; }
+.accordion-list { list-style: none; }
+.accordion-list li a {
+  display: block; padding: 12px 6px; text-decoration: none; color: #333; border-bottom: 1px dashed #e6e6e6;
+}
+.accordion-list li a:hover { background: #f7f7f7; }
+.accordion-list li:last-child a { border-bottom: none; }
+
+.mobile-cta {
+  display: inline-block; margin-top: 8px;
+  background: #111; color: #fff; text-decoration: none;
+  border-radius: 999px; padding: 12px 18px; font-weight: 700;
+}
+
+/* Active highlight in mobile drawer (white bar + bg) */
+@media (max-width: 991px) {
+  .primary-links > li > a.is-active { background: #0f0f0f; }
+  .primary-links > li > a.is-active::before {
+    content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: #ffffff;
+    transform: scaleY(0); transform-origin: top; transition: transform 280ms ease;
+  }
+  .menu-open .primary-links > li > a.is-active::before { transform: scaleY(1); }
+}
+
+/* ------------------------------------------------------------------- */
+/* 4. Desktop (≥992px) — UNCHANGED
+/* ------------------------------------------------------------------- */
+
+@media (min-width: 992px) {
+  .dropdown { position: static; }
+  .main-header { padding: 0 40px; }
+  .hamburger-menu, .mobile-menu-header, .mobile-services-accordion { display: none; }
+  .main-navigation {
+    position: static; transform: none; width: auto; height: 100%;
+    background: none; color: inherit; flex-direction: row; align-items: center; overflow: visible; padding: 0;
+  }
+  .main-navigation > ul { display: flex; height: 100%; }
+  .main-navigation > ul > li { height: 100%; display: flex; align-items: center; margin-left: 32px; }
+  .main-navigation > ul > li > a {
+    display: inline-flex; align-items: center; gap: 10px; border-bottom: none; padding: 5px 0;
+    font-size: 0.95rem; font-weight: 600; font-family: var(--font-family);
+    color: var(--header-text); position: relative; background-color: transparent !important;
+  }
+  .services-trigger { white-space: nowrap; }
+  .main-navigation > ul > li > a::after {
+    content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background-color: var(--link-hover-color); transition: width 0.3s ease;
+  }
+  .main-navigation > ul > li > a:hover::after, .main-navigation > ul > li > a:focus::after { width: 100%; }
+  .main-navigation > ul > li > a.is-active::after { width: 100%; }
+
+  /* Dot-to-cross indicator */
+  .dropdown-indicator { display: block; width: 12px; height: 12px; position: relative; top: 0.5px; background: transparent; border: none; }
+  .dropdown-indicator::before, .dropdown-indicator::after {
+    content: ''; position: absolute; top: 50%; left: 50%; background-color: var(--header-text); transition: all 0.3s cubic-bezier(0.25,1,0.5,1);
+    width: 8px; height: 8px; border-radius: 50%; transform: translate(-50%, -50%) rotate(0deg);
+  }
+  .dropdown:hover .dropdown-indicator::before, .dropdown:focus-within .dropdown-indicator::before {
+    width: 14px; height: 2px; border-radius: 2px; transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  .dropdown:hover .dropdown-indicator::after, .dropdown:focus-within .dropdown-indicator::after {
+    width: 14px; height: 2px; border-radius: 2px; transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  .dropdown-menu {
+    position: absolute; top: var(--header-height); left: 0; width: 100%; height: auto;
+    background-color: var(--header-bg); padding: 40px; opacity: 0; visibility: hidden; transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s; overflow: hidden;
+    border-bottom-left-radius: 12px; border-bottom-right-radius: 12px;
+    border: 1px solid var(--border-color-subtle); border-top: none;
+  }
+  .dropdown:hover .dropdown-menu, .dropdown:focus-within .dropdown-menu {
+    opacity: 1; visibility: visible; transform: translateY(0); transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  .mega-menu-content { display: block; padding: 0; margin: 0; }
+  .mega-menu-layout { display: flex; gap: 40px; }
+  .mega-menu-sidebar { flex: 0 0 25%; border-right: 1px solid #444; padding-right: 40px; }
+  .mega-menu-main { flex: 1; }
+  .mega-menu-title { font-size: 1.5rem; font-weight: 500; color: var(--header-text); margin-bottom: 20px; }
+  .mega-menu-sidebar .mega-menu-description { font-size: 0.95rem; color: var(--mega-menu-text); line-height: 1.6; }
+  .mega-menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+  .mega-col-title { font-size: 1.1rem; font-weight: 500; color: var(--header-text); margin-bottom: 20px; }
+  .mega-col { list-style: none; padding-left: 0; }
+  .mega-col li { margin-bottom: 12px; }
+  .mega-col li a { text-decoration: none; color: var(--mega-menu-text); font-size: 0.9rem; transition: color 0.2s ease; }
+  .mega-col li a:hover { color: var(--link-hover-color); }
+}
+
+/* ------------------------------------------------------------------- */
+/* 5. Desktop active-page "white parting line" animation on load
+/* ------------------------------------------------------------------- */
+@media (min-width: 992px) {
+  .pre-animate .main-navigation > ul > li > a.is-active::after { width: 0 !important; }
+  .animate-in .main-navigation > ul > li > a.is-active::after {
+    width: 100%;
+    transition: width 450ms cubic-bezier(0.22, 1, 0.36, 1) 120ms;
+  }
+}

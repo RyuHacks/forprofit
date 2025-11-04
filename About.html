@@ -7,19 +7,19 @@
     <meta name="description" content="">
     <title>About</title>
     
-    <!-- Nicepage & Theme Styles -->
     <link rel="stylesheet" href="nicepage.css" media="screen">
     <link rel="stylesheet" href="About.css" media="screen">
 
     <link rel="stylesheet" href="headerstyles.css" media="screen">
+    <link rel="stylesheet" href="header.css" media="screen">
     
-    <!-- Nicepage Scripts -->
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     
-    <!-- Meta, Fonts, etc. -->
     <meta name="generator" content="Nicepage 7.11.4, nicepage.com">
-    <link rel="icon" href="images/favicon1.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png" media="(prefers-color-scheme: light)">
+
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96dark.png" media="(prefers-color-scheme: dark)">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     <script type="application/ld+json">{"@context": "http://schema.org", "@type": "Organization", "name": "QalamProfit2"}</script>
     <meta name="theme-color" content="#478ac9">
@@ -28,50 +28,42 @@
     <meta property="og:type" content="website">
     <meta data-intl-tel-input-cdn-path="intlTelInput/">
     
-    <!-- CSS for All Custom Embeds -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
-        
         /* --- Overlay Header Logic --- */
         #header-placeholder { position: absolute; top: 0; left: 0; width: 100%; z-index: 1000; }
         
         /* --- Universal Box Sizing --- */
-        .new-header-embed *, .about-hero-embed *, .our-story-embed *, .our-purpose-embed *, .our-values-embed *, .conversation-cta-embed *, .qalam-footer * { box-sizing: border-box; }
-
-        /* --- Header Styles (Shared) --- */
-        .new-header-embed { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; padding: 15px 0; }
-        .new-header-embed .main-header { max-width: 1200px; margin: 0 auto; padding: 0 25px; display: flex; justify-content: space-between; align-items: center; }
-        .new-header-embed .logo-container a { display: block; }
-        .new-header-embed .logo-container img { max-height: 45px; display: block; margin-top: 5px; }
-        .new-header-embed .main-navigation > ul > li > a { color: #ffffff !important; text-decoration: none; font-size: 0.7em; font-weight: 500; text-transform: uppercase; letter-spacing: 0.8px; padding: 10px 0; transition: color 0.3s ease; position: relative; display: flex; align-items: center; }
-        .new-header-embed .main-navigation > ul > li > a:hover { color: #dcdcdc !important; }
-        .new-header-embed .main-navigation > ul > li > a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: #ffffff; transition: width 0.3s ease-in-out; }
-        .new-header-embed .main-navigation > ul > li.active > a::after, .new-header-embed .main-navigation > ul > li:hover > a::after { width: 100%; }
-        /* Add other header styles here if needed... */
+        .about-hero-embed *, .our-story-embed *, .our-purpose-embed *, .our-values-embed *, .conversation-cta-embed * { box-sizing: border-box; }
 
         /* --- About Page: Hero Styles --- */
         .about-hero-embed { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: #ffffff; padding: 80px 40px; min-height: 500px; display: flex; align-items: center; padding-top: 150px; /* Pushes content below overlay header */ }
         .about-hero-embed .hero-content { max-width: 1200px; margin: 0; text-align: left; }
-        .about-hero-embed .headline-part { font-size: 1.1em; font-weight: 700; line-height: 1.3; color: #ffffff; display: block; opacity: 0; animation: fadeInUp 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; }
+        /* ===== EDITED: Font size reduced by 25% ===== */
+        .about-hero-embed .headline-part { font-size: 0.825em; font-weight: 700; line-height: 1.3; color: #ffffff; display: block; opacity: 0; animation: fadeInUp 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; }
         .about-hero-embed .hero-subtext { font-size: 1.25em; line-height: 1.7; color: #e0e0e0; margin-top: 15px; max-width: 750px; opacity: 0; animation: fadeInUp 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; }
         .about-hero-embed .headline-part-1 { animation-delay: 0.2s; }
         .about-hero-embed .headline-part-2 { animation-delay: 0.8s; }
         .about-hero-embed .hero-subtext { animation-delay: 1.4s; }
         
         /* --- About Page: Our Story, Purpose, Values, CTA Styles --- */
-        .our-story-embed, .our-purpose-embed { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; margin: 60px 0; padding: 0 40px; color: #333; }
+        .our-story-embed, .our-purpose-embed { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; padding: 0 40px; color: #333; }
+        .our-story-embed { margin: 60px 0 20px 0; }
+        .our-purpose-embed { margin: 20px 0 -60px 0; position: relative; z-index: 1; } 
+
         .our-story-embed .section-eyebrow, .our-purpose-embed .section-eyebrow { font-family: "Graphik", Helvetica, sans-serif, "Lucida Sans Unicode"; font-size: 1.35em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #000000; margin-bottom: 12px; text-align: left; }
         .our-story-embed .eyebrow-divider, .our-purpose-embed .eyebrow-divider { height: 1px; width: 100%; background-color: #000000; margin: 0 0 35px 0; }
         .our-story-embed .story-description, .our-purpose-embed .purpose-description { font-size: 1.1em; line-height: 1.8; color: #444444; text-align: justify; hyphens: auto; }
-        .our-values-embed { max-width: 1100px; margin: 60px auto; padding: 0 15px; color: #cccccc; }
+        
+        .our-values-embed { max-width: 1100px; margin-top: 10px; margin-bottom: 60px; padding: 0 15px; color: #cccccc; }
+        
         .our-values-embed .section-eyebrow { font-family: "Graphik", Helvetica, sans-serif, "Lucida Sans Unicode"; font-weight: 700; font-size: 1.35em; color: #bbbbbb; text-align: left; margin-bottom: 12px; letter-spacing: 0.5px; text-transform: uppercase; }
-        .our-values-embed .eyebrow-divider { height: 1px; width: 40vw; background-color: #555555; margin: 0 0 40px 0; }
+        .our-values-embed .eyebrow-divider { height: 1px; width: 100%; background-color: #555555; margin: 0 0 40px 0; }
         .our-values-embed .values-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 50px; }
         .our-values-embed .value-item { padding: 0; text-align: left; }
         .our-values-embed .value-item h3 { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 1.38em; font-weight: 600; color: #ffffff; margin: 0 0 12px 0; }
         .our-values-embed .value-item p { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 1.04em; color: #dddddd; line-height: 1.6; margin: 0; }
-        .conversation-cta-embed { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; margin: 60px 0; padding: 60px 40px; color: #333; border-top: 1px solid #000000; text-align: center; }
+        
+        .conversation-cta-embed { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; margin: 60px 0; padding: 60px 40px; color: #333; text-align: center; }
         .conversation-cta-embed .cta-content-wrapper { max-width: 800px; margin: 0 auto; }
         .conversation-cta-embed .cta-headline { font-family: "Graphik", Helvetica, sans-serif, "Lucida Sans Unicode"; font-size: 2.5em; font-weight: 600; color: #1a1a1a; line-height: 1.3; margin: 0 0 20px 0; }
         .conversation-cta-embed .cta-subtext { font-size: 1.1em; line-height: 1.7; color: #555555; margin-bottom: 35px; }
@@ -80,14 +72,6 @@
         .conversation-cta-embed .button-text::after { content: ''; position: absolute; bottom: 0; left: 0; height: 2px; background-color: #000000; width: 0; transition: width 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
         .conversation-cta-embed .cta-button:hover .button-text::after { width: 100%; }
         
-        /* --- Footer Styles (Shared) --- */
-        .qalam-footer { background-color: #000000; color: #ffffff; font-family: 'Poppins', sans-serif; padding: 60px 0; width: 100%; }
-        .footer-content-wrapper { max-width: 1100px; margin: 0 auto; padding: 0 15px; }
-        .footer-main { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 40px; padding-bottom: 40px; }
-        /* Add other footer styles here if needed... */
-
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
         /* --- Responsive Styles --- */
         @media (max-width: 768px) {
             .about-hero-embed { padding: 120px 20px 60px; }
@@ -99,16 +83,12 @@
             .our-values-embed .value-item { text-align: center; }
             .conversation-cta-embed { padding: 50px 20px; }
         }
-        /* Mobile menu, etc. would also go here, but keeping it concise */
     </style>
 </head>
 
 <body data-path-to-root="./" data-include-products="false" class="u-body u-clearfix u-xl-mode" data-lang="en">
     
-    <!-- HEADER PLACEHOLDER: This will be filled by include.js -->
     <div id="header-placeholder"></div>
-
-    <!-- ===== START OF UNIQUE ABOUT PAGE CONTENT ===== -->
 
     <section class="skrollable u-clearfix u-gradient u-image u-parallax u-section-1" id="sec-b06a" data-image-width="3680" data-image-height="2456">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
@@ -118,7 +98,7 @@
               <span class="headline-part headline-part-1">Where Insight</span>
               <span class="headline-part headline-part-2">Meets Impact.</span>
             </h1>
-            <p class="hero-subtext">We exist to help ambitious businesses grow with clarity, purpose, and real-world results.</p>
+            <p class="hero-subtext">Driving growth across all facets of business operations</p>
           </div>
         </div>
       </div>
@@ -129,17 +109,17 @@
         <div class="our-story-embed">
           <h2 class="section-eyebrow">Our Story</h2>
           <div class="eyebrow-divider"></div>
-          <p class="story-description">Qalam Consulting began as a <strong>pro-bono initiative</strong> dedicated to supporting <strong>small and medium-sized businesses</strong> that needed strategic guidance but lacked access to affordable consulting. What started as a mission to give back to our community has grown into a full-service consulting firm—now <strong>for-profit, but still purpose-driven</strong>. We’ve worked with organizations across sectors to solve real challenges through strategy, design, marketing, financial insight, and research. Today, we continue that work with the same values: delivering <strong>sharp, actionable solutions</strong> that make a difference. Because for us, consulting isn't just about growth—it's about <strong>impact</strong>.</p>
+          <p class="story-description">Qalam Consulting began as a pro-bono initiative to assist struggling businesses within our community in the face of economic uncertainty, rapid technological development, and heightened competition. It was understanding the different challenges businesses faced as well as the prohibitive cost of consulting services that led us to create Qalam Consulting. Our experience helping clients across various industries is what led us to develop Qalam Consulting into a for-profit consulting firm that helps businesses solve their greatest challenges.</p>
         </div>
       </div>
     </section>
 
     <section class="u-clearfix u-section-3" id="block-2">
-      <div class="u-clearfix u-sheet u-sheet-1">
+      <div class="u-clearfix u-sheet u-sheet-1" style="box-sizing: 50px;">
         <div class="our-purpose-embed">
-          <h2 class="section-eyebrow">Our Purpose</h2>
+          <h2 class="section-eyebrow">Our Mission</h2>
           <div class="eyebrow-divider"></div>
-          <p class="purpose-description">At Qalam Consulting, our purpose is to help businesses overcome their <strong>toughest challenges</strong> with sharp, <strong>research-driven solutions</strong>—delivered accessibly, affordably, and with <strong>real impact</strong>. We believe that every business deserves the <strong>clarity, strategy, and insight</strong> needed to thrive—without the barriers of <strong>high cost or complexity</strong>.</p>
+          <p class="purpose-description">Our mission is to help businesses overcome their toughest challenges by providing thoroughly researched and results-driven solutions that are practical, impactful, and accessible to organizations of all sizes.</p>
         </div>
       </div>
     </section>
@@ -152,11 +132,11 @@
           <div class="values-grid">
             <div class="value-item">
               <h3>Integrity</h3>
-              <p>We believe all our business activity should be conducted with honesty, transparency, and fairness regardless of the circumstances.</p>
+              <p>We believe all our business activity should be conducted with honesty, transparency, and fairness, regardless of the circumstances.</p>
             </div>
             <div class="value-item">
               <h3>Dedication</h3>
-              <p>We are fully committed to our clients' success. We remain persistent to achieve desired results, regardless of the challenges we may face.</p>
+              <p>We are committed to ensuring our clients' success regardless of the challenges we may face.</p>
             </div>
             <div class="value-item">
               <h3>Collaboration</h3>
@@ -175,20 +155,16 @@
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="conversation-cta-embed">
           <div class="cta-content-wrapper">
-            <h2 class="cta-headline">We’ve built Qalam around impact, clarity, and collaboration.</h2>
-            <p class="cta-subtext">If you're facing a challenge worth solving, we’d love to hear from you.</p>
-            <a href="Contact.html" class="cta-button"><span class="button-text">Let’s Start a Conversation →</span></a>
+            <h2 class="cta-headline">Our work is driven by impact, guided by research, and strengthened through collaboration</h2>
+            <p class="cta-subtext">If you’re facing a challenge, we’d love to hear from you</p>
+            <a href="Contact.html" class="cta-button"><span class="button-text" style="font-size: 0.8em;">Tell us how we can help →</span></a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== END OF UNIQUE ABOUT PAGE CONTENT ===== -->
-
-    <!-- FOOTER PLACEHOLDER: This will be filled by include.js -->
     <footer id="footer-placeholder"></footer>
 
-    <!-- This script loads the header and footer into the placeholders above -->
     <script src="include.js"></script>
 
 </body>

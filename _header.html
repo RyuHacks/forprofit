@@ -1,39 +1,134 @@
-<div class="new-header-embed">
-  <div class="menu-overlay"></div>
+<!-- Qalam Consulting — Header (Desktop unchanged, Mobile redesigned) -->
+<div class="new-header-embed" data-component="qc-header">
+  <div class="menu-overlay" data-action="close" aria-hidden="true"></div>
+
   <header class="main-header" role="banner">
     <div class="logo-container">
-      <a href="index.html"><img src="https://i.postimg.cc/x8yk6s1w/QCLogo-Alternatelowres.png" alt="Qalam Consulting Logo"></a>
+      <a href="index.html" aria-label="Qalam Consulting Home">
+        <img src="https://i.postimg.cc/x8yk6s1w/QCLogo-Alternatelowres.png" alt="Qalam Consulting Logo">
+      </a>
     </div>
-    <button class="hamburger-menu" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-navigation-menu"><span class="hamburger-bar"></span><span class="hamburger-bar"></span><span class="hamburger-bar"></span></button>
-    <nav class="main-navigation" id="main-navigation-menu">
+
+    <button class="hamburger-menu"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="main-navigation-menu">
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+    </button>
+
+    <nav class="main-navigation" id="main-navigation-menu" role="navigation" aria-label="Primary">
+      <!-- Mobile off-canvas header -->
       <div class="mobile-menu-header">
-        <div class="logo-container"><a href="index.html"><img src="https://i.postimg.cc/x8yk6s1w/QCLogo-Alternatelowres.png" alt="Qalam Consulting Logo"></a></div>
-        <button class="close-menu" aria-label="Close menu">×</button>
+        <div class="logo-container">
+          <a href="index.html" aria-label="Qalam Consulting Home">
+            <img src="https://i.postimg.cc/x8yk6s1w/QCLogo-Alternatelowres.png" alt="Qalam Consulting Logo">
+          </a>
+        </div>
+        <button class="close-menu" aria-label="Close menu" data-action="close">×</button>
       </div>
-      <ul>
+
+      <!-- Top-level links (mobile = quick links inside the drawer) -->
+      <ul class="primary-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="About.html">About</a></li>
+
+        <!-- Our Services (desktop uses hover mega; mobile uses accordion below) -->
         <li class="dropdown">
-          <a href="Services.html">Services <span class="arrow desktop-arrow">▼</span><span class="arrow mobile-arrow">▶</span></a>
-          <div class="dropdown-menu">
-            <div class="submenu-header-mobile">
-                <button class="menu-back-btn" aria-label="Go back">← Back</button>
-                <h4>Services</h4>
+          <a href="Services.html" class="services-trigger">
+            Our Services <span class="dropdown-indicator" aria-hidden="true"></span>
+          </a>
+
+          <!-- DESKTOP mega menu (unchanged) -->
+          <div class="dropdown-menu mega-menu" aria-label="Our Services submenu">
+            <div class="mega-menu-content" aria-hidden="true">
+              <div class="mega-menu-layout">
+                <!-- Sidebar -->
+                <div class="mega-menu-sidebar">
+                  <h3 class="mega-menu-title">Our Services</h3>
+                  <p class="mega-menu-description">
+                    We help businesses navigate complexity and drive meaningful growth.
+                    With clear strategies and practical insights, we turn challenges into opportunities.
+                  </p>
+                </div>
+                <!-- Main -->
+                <div class="mega-menu-main">
+                  <div class="mega-menu-grid">
+                    <div class="mega-col-wrapper">
+                      <h4 class="mega-col-title">Consulting Services</h4>
+                      <ul class="mega-col">
+                        <!-- Keep desktop links as-is (unchanged) -->
+                        <li><a href="Strategy.html">Strategy Consulting</a></li>
+                        <li><a href="Financial.html">Financial Advisory</a></li>
+                        <li><a href="Startup.html">Startup Advisory</a></li>
+                        <li><a href="Business-Resiliency.html">Business Resiliency</a></li>
+                        <li><a href="Marketing.html">Market Advisory</a></li>
+                        <li><a href="Research.html">Market Research</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-col-wrapper">
+                      <h4 class="mega-col-title">Content & Insights</h4>
+                      <ul class="mega-col">
+                        <li><a href="Reports.html">Qalam reports</a></li>
+                        <li><a href="Deep-Dives.html">Industry Deep Dives</a></li>
+                        <li><a href="Startup-Advice.html">Startup Advice</a></li>
+                      </ul>
+                    </div>
+                    <div class="mega-col-wrapper">
+                      <h4 class="mega-col-title">Newsroom</h4>
+                      <ul class="mega-col">
+                        <li><a href="News.html">Latest News</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="dropdown-content-white">
-              <h3 class="dropdown-title">Our Services</h3>
-              <div class="dropdown-title-divider"></div>
-              <ul class="dropdown-grid">
-                <li><a href="Strategy.html">Strategic Advisory</a></li>
-                <li><a href="Financial.html">Financial Advisory</a></li>
-                <li><a href="Market-Research.html">Market Research</a></li>
-                <li><a href="Crisis-Strategy.html">Crisis-Strategy Consulting</a></li>
-              </ul>
-            </div>
+            <!-- (Old mobile submenu removed; new accordion below handles mobile) -->
           </div>
         </li>
+
         <li><a href="Contact.html">Contact</a></li>
       </ul>
+
+      <!-- NEW: Mobile Services Accordion (only visible ≤991px) -->
+      <div class="mobile-services-accordion" aria-label="Our Services Mobile">
+        <h4 class="mobile-section-title">Our Services</h4>
+
+        <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-consulting">Consulting Services</button>
+        <div id="acc-consulting" class="accordion-panel" hidden>
+          <ul class="accordion-list">
+            <!-- Mobile URLs (can differ from desktop; JS marks Services active either way) -->
+            <li><a href="Strategy-Consulting.html">Strategy Consulting</a></li>
+            <li><a href="Financial-Advisory.html">Financial Advisory</a></li>
+            <li><a href="Startup-Advisory.html">Startup Advisory</a></li>
+            <li><a href="Business-Resiliency.html">Business Resiliency</a></li>
+            <li><a href="Market-Research.html">Market Research</a></li>
+          </ul>
+        </div>
+
+        <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-insights">Content &amp; Insights</button>
+        <div id="acc-insights" class="accordion-panel" hidden>
+          <ul class="accordion-list">
+            <li><a href="Reports.html">Qalam reports</a></li>
+            <li><a href="Deep-Dives.html">Industry Deep Dives</a></li>
+            <li><a href="Startup-Advice.html">Startup Advice</a></li>
+          </ul>
+        </div>
+
+        <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-newsroom">Newsroom</button>
+        <div id="acc-newsroom" class="accordion-panel" hidden>
+          <ul class="accordion-list">
+            <li><a href="Newsroom.html">Latest News</a></li>
+          </ul>
+        </div>
+
+        <a href="Contact.html" class="mobile-cta">Book a call</a>
+      </div>
     </nav>
   </header>
 </div>
+
+<!-- Include after the element or bundle with your scripts -->
+<script src="header.js" defer></script>
